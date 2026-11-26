@@ -10,8 +10,8 @@ services:
     container_name: grc-caddy
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
     environment:
       - APP_HOST=${APP_HOST:-app.grc.localhost}
       - AUTH_HOST=${AUTH_HOST:-auth.grc.localhost}
@@ -197,7 +197,7 @@ services:
       - EMAIL_FROM_DEFAULT=${EMAIL_FROM_DEFAULT}
       - DATABASE_URL=postgresql+psycopg://emailworker:${EW_DB_PASSWORD}@postgres:5432/emailworker
     ports:
-      - "127.0.0.1:8081:8081" # webhook receiver (fronted by Caddy in prod)
+      - "127.0.0.1:${WEBHOOK_PORT:-8081}:8081" # webhook receiver (fronted by Caddy in prod)
     depends_on:
       redis:
         condition: service_healthy

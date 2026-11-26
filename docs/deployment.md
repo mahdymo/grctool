@@ -87,6 +87,27 @@ python migration/reconcile.py --staging migration/staging/gulf-coverage.json \
 - [ ] Backups: schedule `docs/runbooks/backup-restore.md` daily via cron
 - [ ] Uptime monitor on `https://ia.tareeq.one/api/health/`
 
+## Ports already taken on the host?
+
+`HTTP_PORT`, `HTTPS_PORT` and `WEBHOOK_PORT` in `.env` control every port
+this stack binds on the host. If other Docker containers already occupy
+80/443 you have three options:
+
+1. **Free 80/443 for this stack** (recommended for a dedicated domain):
+   stop or re-port the other containers, keep `HTTP_PORT=80 HTTPS_PORT=443`.
+2. **Run behind your existing reverse proxy**: set `HTTP_PORT`/`HTTPS_PORT`
+   to free ports, terminate TLS on your existing proxy, and proxy the four
+   hostnames to this stack. Caddy still routes by hostname internally; you
+   lose its automatic certificates (your proxy owns TLS).
+3. **Non-standard ports without a front proxy**: works for browsing
+   (`https://ia.tareeq.one:8443`), but Let's Encrypt's HTTP-01/TLS-ALPN-01
+   challenges need 80/443 reachable — you'd have to switch Caddy to the
+   DNS-01 challenge (requires a DNS-provider plugin build of Caddy).
+
+`WEBHOOK_PORT` only matters in dev (bound to 127.0.0.1); in prod webhooks
+arrive via Caddy on `HOOKS_HOST`, and the prod overlay removes the published
+port entirely.
+
 ## Changing the hostname later
 
 Every hostname is env-driven. To move to a new domain: update the four
