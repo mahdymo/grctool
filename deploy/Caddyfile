@@ -1,11 +1,13 @@
-# Dev reverse proxy — HTTP only, hostnames from env (defaults = *.grc.localhost).
-# Prod uses deploy/Caddyfile.prod (automatic HTTPS). Host layout:
+# HTTP-only reverse proxy — no TLS. Used for local dev AND for deployments
+# without certificates (set CADDYFILE=../deploy/Caddyfile in .env).
+# Hostnames and port come from env; defaults = *.grc.localhost on :80.
 #   {$APP_HOST}   -> customer1 CISO Assistant instance
 #   {$AUTH_HOST}  -> Keycloak
 #   {$OPS_HOST}   -> control plane (our team only)
+#   {$HOOKS_HOST} -> email worker webhooks
 # Phase 2 adds partner vhosts here (theme + per-partner realm).
 
-http://{$APP_HOST:app.grc.localhost} {
+http://{$APP_HOST:app.grc.localhost}:{$HTTP_PORT:80} {
 	header {
 		-Server
 		X-Content-Type-Options nosniff
@@ -16,7 +18,7 @@ http://{$APP_HOST:app.grc.localhost} {
 	reverse_proxy /* frontend:3000
 }
 
-http://{$AUTH_HOST:auth.grc.localhost} {
+http://{$AUTH_HOST:auth.grc.localhost}:{$HTTP_PORT:80} {
 	header {
 		-Server
 		X-Content-Type-Options nosniff
@@ -24,11 +26,19 @@ http://{$AUTH_HOST:auth.grc.localhost} {
 	reverse_proxy keycloak:8080
 }
 
-http://{$OPS_HOST:ops.grc.localhost} {
+http://{$OPS_HOST:ops.grc.localhost}:{$HTTP_PORT:80} {
 	header {
 		-Server
 		X-Content-Type-Options nosniff
 		X-Frame-Options DENY
 	}
 	reverse_proxy control-plane:8000
+}
+
+http://{$HOOKS_HOST:hooks.grc.localhost}:{$HTTP_PORT:80} {
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+	}
+	reverse_proxy email-worker:8081
 }

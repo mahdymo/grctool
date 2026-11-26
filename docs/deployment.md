@@ -117,6 +117,24 @@ this stack binds on the host. If other Docker containers already occupy
 arrive via Caddy on `HOOKS_HOST`, and the prod overlay removes the published
 port entirely.
 
+## HTTP-only mode (no TLS)
+
+For deployments not exposed to the internet (VPN-only, internal network),
+skip certificates entirely: in `.env` set
+
+```
+APP_SCHEME=http
+HTTP_PORT=8088
+APP_PORT_SUFFIX=:8088
+CADDYFILE=../deploy/Caddyfile
+HTTPS_PORT=9443        # bound by the overlay but unused; must be a free port
+```
+
+then `docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d`.
+Access the app at `http://ia.tareeq.one:8088` (all four hostnames on the
+same port). No ACME, no redirects. Switch to TLS later by reverting these
+five values and recreating caddy/backend/frontend.
+
 ## Changing the hostname later
 
 Every hostname is env-driven. To move to a new domain: update the four
