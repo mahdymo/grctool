@@ -6,7 +6,8 @@ cd "$(dirname "$0")/.."
 
 CP_TOKEN=$(grep CONTROL_PLANE_TOKEN compose/.env | cut -d= -f2)
 ADMIN_EMAIL="admin@ehsanlab.local"
-ADMIN_PASSWORD="Phase0-Verify-$(date +%s)!"
+# Dev-only credential; override via env. Printed so it is never lost again.
+ADMIN_PASSWORD="${VERIFY_ADMIN_PASSWORD:-EhsanLab-Phase0-2026!}"
 
 echo "== AC1: service health =="
 for svc in "http://app.grc.localhost/api/health/" "http://auth.grc.localhost/realms/ehsanlab-internal/.well-known/openid-configuration" "http://ops.grc.localhost/health" "http://127.0.0.1:8081/health"; do
@@ -30,12 +31,16 @@ echo "  anonymous /api/customers -> $code (expect 401)"
 echo "== create CISO Assistant admin + PAT =="
 docker exec grc-backend-customer1 python manage.py shell -c "
 from iam.models import User
-if not User.objects.filter(email='$ADMIN_EMAIL').exists():
+u = User.objects.filter(email='$ADMIN_EMAIL').first()
+if u is None:
     User.objects.create_superuser(email='$ADMIN_EMAIL', password='$ADMIN_PASSWORD')
     print('admin created')
 else:
-    print('admin exists')
+    u.set_password('$ADMIN_PASSWORD')
+    u.save()
+    print('admin exists (password synced)')
 " | tail -1
+echo "  login: $ADMIN_EMAIL / $ADMIN_PASSWORD"
 
 PAT=$(docker exec grc-backend-customer1 python manage.py shell -c "
 from iam.models import User, PersonalAccessToken
