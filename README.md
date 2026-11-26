@@ -33,6 +33,20 @@ docker compose -f compose/docker-compose.yml up -d
 Then browse to `http://app.grc.localhost` (CISO Assistant via Caddy) and
 `http://auth.grc.localhost` (Keycloak admin).
 
+## Deploy to a server (production)
+
+Hostnames are env-driven — see `docs/deployment.md`. Short version:
+
+```bash
+cd compose
+cp env.production.example .env   # APP_HOST=ia.tareeq.one, secrets, ACME email
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
+
+Caddy provisions Let's Encrypt certificates automatically for
+`ia.tareeq.one`, `auth.`, `ops.` and `hooks.` subdomains (DNS must point at
+the server first).
+
 ## Security gates
 
 All changes via PR; CI runs gitleaks, pip-audit, Semgrep, and Trivy. Direct pushes

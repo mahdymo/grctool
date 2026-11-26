@@ -1,0 +1,64 @@
+# Production overlay — use with:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# Requires .env populated from .env.production.example.
+
+services:
+  caddy:
+    environment:
+      - APP_HOST=${APP_HOST}
+      - AUTH_HOST=${AUTH_HOST}
+      - OPS_HOST=${OPS_HOST}
+      - HOOKS_HOST=${HOOKS_HOST}
+      - ACME_EMAIL=${ACME_EMAIL}
+    volumes:
+      - ../deploy/Caddyfile.prod:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    restart: always
+
+  backend:
+    restart: always
+    environment:
+      - ALLOWED_HOSTS=backend,localhost,${APP_HOST}
+      - CISO_ASSISTANT_URL=https://${APP_HOST}
+      - DJANGO_DEBUG=False
+      - AUTH_TOKEN_TTL=7200
+      - POSTGRES_NAME=ciso_customer1
+      - POSTGRES_USER=ciso
+      - POSTGRES_PASSWORD=${CISO_DB_PASSWORD}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - HOME=/tmp
+      - XDG_CACHE_HOME=/tmp/.cache
+      - XDG_CONFIG_HOME=/tmp/.config
+      - XDG_DATA_HOME=/tmp/.local/share
+
+  huey:
+    restart: always
+
+  frontend:
+    environment:
+      - PUBLIC_BACKEND_API_URL=http://backend:8000/api
+      - PUBLIC_BACKEND_API_EXPOSED_URL=https://${APP_HOST}/api
+      - PROTOCOL_HEADER=x-forwarded-proto
+      - HOST_HEADER=x-forwarded-host
+      - ADDRESS_HEADER=x-forwarded-for
+      - XFF_DEPTH=1
+
+  keycloak:
+    command: ["start", "--import-realm", "--http-enabled=true",
+              "--proxy-headers=xforwarded", "--hostname-strict=false"]
+    restart: always
+
+  postgres:
+    restart: always
+
+  redis:
+    restart: always
+
+  control-plane:
+    restart: always
+
+  email-worker:
+    restart: always
+    # Webhooks reach the worker through Caddy ({$HOOKS_HOST}); no published port.
+    ports: !reset []

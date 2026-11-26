@@ -1,0 +1,101 @@
+# Remote deployment — ia.tareeq.one
+
+Deploys the full Phase 0 stack on a single host with automatic HTTPS.
+Hostnames are fully configurable via env; this guide uses the first
+deployment's names:
+
+| Host | Service |
+|---|---|
+| `ia.tareeq.one` | CISO Assistant (the app — apex domain) |
+| `auth.ia.tareeq.one` | Keycloak |
+| `ops.ia.tareeq.one` | Control plane (restrict to office/VPN IPs) |
+| `hooks.ia.tareeq.one` | Resend webhooks (public, signature-verified) |
+
+## 1. Server requirements
+
+- Ubuntu 24.04 (or similar), 4 vCPU / 8 GB RAM / 80 GB disk minimum
+- Docker Engine + Compose plugin:
+  ```bash
+  curl -fsSL https://get.docker.com | sh
+  sudo usermod -aG docker $USER && newgrp docker
+  ```
+- Firewall: only 22, 80, 443 open
+  ```bash
+  sudo ufw allow 22,80,443/tcp && sudo ufw enable
+  ```
+
+## 2. DNS (before first boot — Let's Encrypt needs it)
+
+Create A records (and AAAA if the host has IPv6) at the `tareeq.one` DNS
+provider, all pointing at the server IP:
+
+```
+ia.tareeq.one          A  <server-ip>
+auth.ia.tareeq.one     A  <server-ip>
+ops.ia.tareeq.one      A  <server-ip>
+hooks.ia.tareeq.one    A  <server-ip>
+```
+
+Verify: `dig +short ia.tareeq.one auth.ia.tareeq.one ops.ia.tareeq.one hooks.ia.tareeq.one`
+
+## 3. Install
+
+```bash
+git clone <repo-url> grctool && cd grctool/compose
+cp env.production.example .env
+# fill in .env — generate each secret: openssl rand -base64 24
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
+
+Caddy obtains certificates on first request; watch with
+`docker logs -f grc-caddy`. First backend boot runs ~5 min of migrations.
+
+## 4. First-boot setup
+
+```bash
+# Admin user + PAT (from repo root)
+docker exec grc-backend-customer1 python manage.py shell -c "
+from iam.models import User
+User.objects.create_superuser(email='admin@tareeq.one', password='<strong-password>')"
+
+# Import the IA SAT libraries (PAT minted as in scripts/verify-phase0.sh)
+python scripts/upload_libraries.py --url https://ia.tareeq.one --token <PAT> \
+    --dir libraries/ia-sat-ml/v1.0
+
+# Migrate Gulf Coverage (workbooks copied to migration/source-data/ first —
+# they are gitignored, so transfer them out-of-band, e.g. scp)
+python migration/load_ciso.py --url https://ia.tareeq.one --token <PAT> \
+    --staging migration/staging/gulf-coverage.json --cycle 2026-H2
+python migration/load_control_plane.py --url https://ops.ia.tareeq.one \
+    --token <CONTROL_PLANE_TOKEN> --staging migration/staging/gulf-coverage.json
+python migration/reconcile.py --staging migration/staging/gulf-coverage.json \
+    --url https://ia.tareeq.one --token <PAT> --cycle 2026-H2 \
+    --control-plane-url https://ops.ia.tareeq.one --control-plane-token <CONTROL_PLANE_TOKEN>
+```
+
+## 5. Post-deploy hardening checklist (spec §6)
+
+- [ ] Restrict `ops.ia.tareeq.one` to office/VPN IPs (uncomment the
+      `remote_ip` block in `deploy/Caddyfile.prod`)
+- [ ] Keycloak: log into `https://auth.ia.tareeq.one/admin`, disable the
+      bootstrap admin after creating a named admin with TOTP
+- [ ] Resend: verify sending domain `ia.tareeq.one` (SPF/DKIM/DMARC
+      records per Resend dashboard), create prod API key + webhook
+      (endpoint `https://hooks.ia.tareeq.one/webhooks/resend`, events
+      `email.delivered/bounced/complained`), put both secrets in `.env`,
+      `docker compose ... up -d --force-recreate email-worker`
+- [ ] Backups: schedule `docs/runbooks/backup-restore.md` daily via cron
+- [ ] Uptime monitor on `https://ia.tareeq.one/api/health/`
+
+## Changing the hostname later
+
+Every hostname is env-driven. To move to a new domain: update the four
+`*_HOST` vars in `.env`, add DNS records, `docker compose -f docker-compose.yml
+-f docker-compose.prod.yml up -d --force-recreate caddy backend frontend keycloak`.
+Caddy fetches new certificates automatically.
+
+## Partner subdomains (Phase 2 preview)
+
+The same pattern extends to whitelabel partners: add a vhost in
+`Caddyfile.prod` (e.g. `partner-a.ia.tareeq.one`), a partner realm in
+`keycloak/realms/`, and a themed frontend instance per the spec §2.1.

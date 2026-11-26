@@ -1,45 +1,34 @@
-# Dev reverse proxy. Host-based routing per spec §2.1:
-#   app.grc.localhost        -> customer1 CISO Assistant instance
-#   auth.grc.localhost       -> Keycloak
-#   ops.grc.localhost        -> control plane (our team only)
-#   partner-a.grc.localhost  -> customer instance with partner-A theme (Phase 2)
-# *.localhost resolves to 127.0.0.1 on Windows/macOS/most Linux.
+# Dev reverse proxy — HTTP only, hostnames from env (defaults = *.grc.localhost).
+# Prod uses deploy/Caddyfile.prod (automatic HTTPS). Host layout:
+#   {$APP_HOST}   -> customer1 CISO Assistant instance
+#   {$AUTH_HOST}  -> Keycloak
+#   {$OPS_HOST}   -> control plane (our team only)
+# Phase 2 adds partner vhosts here (theme + per-partner realm).
 
-{
-	auto_https off
-	servers {
-		trusted_proxies static 127.0.0.1
-	}
-}
-
-(security_headers) {
+http://{$APP_HOST:app.grc.localhost} {
 	header {
 		-Server
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 		X-Frame-Options DENY
 	}
-}
-
-app.grc.localhost:80 {
-	import security_headers
 	reverse_proxy /api/* backend:8000
 	reverse_proxy /* frontend:3000
 }
 
-auth.grc.localhost:80 {
-	import security_headers
+http://{$AUTH_HOST:auth.grc.localhost} {
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+	}
 	reverse_proxy keycloak:8080
 }
 
-ops.grc.localhost:80 {
-	import security_headers
+http://{$OPS_HOST:ops.grc.localhost} {
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+	}
 	reverse_proxy control-plane:8000
 }
-
-# Phase 2: partner whitelabel vhosts (theme selection + per-partner realm).
-# partner-a.grc.localhost:80 {
-# 	import security_headers
-# 	reverse_proxy /api/* backend-partner-a-customer1:8000
-# 	reverse_proxy /* frontend-partner-a-customer1:3000
-# }

@@ -1,0 +1,52 @@
+# Production reverse proxy — automatic HTTPS (Let's Encrypt) for all hosts.
+# Required env (passed by compose.prod.yml): APP_HOST, AUTH_HOST, OPS_HOST,
+# HOOKS_HOST, ACME_EMAIL. DNS A/AAAA records for every host must point at
+# this server and ports 80/443 must be reachable for the ACME challenge.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$APP_HOST} {
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+	}
+	reverse_proxy /api/* backend:8000
+	reverse_proxy /* frontend:3000
+}
+
+{$AUTH_HOST} {
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+	}
+	reverse_proxy keycloak:8080
+}
+
+{$OPS_HOST} {
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+	}
+	# Restrict to office/VPN egress IPs in production (spec §6.2):
+	# @blocked not remote_ip 203.0.113.0/24
+	# respond @blocked 403
+	reverse_proxy control-plane:8000
+}
+
+# Resend webhooks (signature-verified by the worker itself, spec §4.4.4)
+{$HOOKS_HOST} {
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+	}
+	reverse_proxy email-worker:8081
+}
