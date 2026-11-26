@@ -5,11 +5,13 @@
 services:
   caddy:
     environment:
-      - APP_HOST=${APP_HOST}
-      - AUTH_HOST=${AUTH_HOST}
-      - OPS_HOST=${OPS_HOST}
-      - HOOKS_HOST=${HOOKS_HOST}
-      - ACME_EMAIL=${ACME_EMAIL}
+      # :? fails compose up loudly when the var is missing from .env —
+      # an empty hostname produces a broken Caddyfile.
+      - APP_HOST=${APP_HOST:?set APP_HOST in compose/.env}
+      - AUTH_HOST=${AUTH_HOST:?set AUTH_HOST in compose/.env}
+      - OPS_HOST=${OPS_HOST:?set OPS_HOST in compose/.env}
+      - HOOKS_HOST=${HOOKS_HOST:?set HOOKS_HOST in compose/.env}
+      - ACME_EMAIL=${ACME_EMAIL:?set ACME_EMAIL in compose/.env}
     volumes:
       - ../deploy/Caddyfile.prod:/etc/caddy/Caddyfile:ro
       - caddy_data:/data

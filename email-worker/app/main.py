@@ -28,7 +28,7 @@ _store: Store | None = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global _store
-    _store = Store(settings.database_url)
+    _store = Store(settings.sqlalchemy_url())
     init_webhooks(_store)
     stop = asyncio.Event()
     renderer = Renderer(settings.template_dir)

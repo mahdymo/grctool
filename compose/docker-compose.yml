@@ -177,7 +177,11 @@ services:
     container_name: grc-control-plane
     restart: unless-stopped
     environment:
-      - DATABASE_URL=postgresql+psycopg://controlplane:${CP_DB_PASSWORD}@postgres:5432/controlplane
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=controlplane
+      - DB_USER=controlplane
+      - DB_PASSWORD=${CP_DB_PASSWORD}
       - REDIS_URL=redis://redis:6379/0
       - INTERNAL_API_TOKEN=${CONTROL_PLANE_TOKEN}
     depends_on:
@@ -195,7 +199,11 @@ services:
       - RESEND_API_KEY=${RESEND_API_KEY}
       - RESEND_WEBHOOK_SECRET=${RESEND_WEBHOOK_SECRET}
       - EMAIL_FROM_DEFAULT=${EMAIL_FROM_DEFAULT}
-      - DATABASE_URL=postgresql+psycopg://emailworker:${EW_DB_PASSWORD}@postgres:5432/emailworker
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=emailworker
+      - DB_USER=emailworker
+      - DB_PASSWORD=${EW_DB_PASSWORD}
     ports:
       - "127.0.0.1:${WEBHOOK_PORT:-8081}:8081" # webhook receiver (fronted by Caddy in prod)
     depends_on:
