@@ -20,6 +20,16 @@ services:
       - keycloak
       - control-plane
 
+  # Named volumes are root-owned; the backend runs as uid 1001 (upstream
+  # hardening). One-shot init fixes ownership before the backend starts.
+  volume-init:
+    image: alpine:latest
+    container_name: grc-volume-init
+    volumes:
+      - ciso_evidence_customer1:/data
+    command: ["chown", "-R", "1001:1001", "/data"]
+    restart: "no"
+
   # ---------- Customer instance: customer1 ----------
   backend:
     image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:185bcdcc0251a08e5d9de7f49d2c4964980eff0fac4ecb38a217f6146d03b96d
@@ -51,6 +61,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      volume-init:
+        condition: service_completed_successfully
 
   huey:
     image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:185bcdcc0251a08e5d9de7f49d2c4964980eff0fac4ecb38a217f6146d03b96d
@@ -159,7 +171,7 @@ services:
     container_name: grc-control-plane
     restart: unless-stopped
     environment:
-      - DATABASE_URL=postgresql://controlplane:${CP_DB_PASSWORD}@postgres:5432/controlplane
+      - DATABASE_URL=postgresql+psycopg://controlplane:${CP_DB_PASSWORD}@postgres:5432/controlplane
       - REDIS_URL=redis://redis:6379/0
       - INTERNAL_API_TOKEN=${CONTROL_PLANE_TOKEN}
     depends_on:
@@ -177,7 +189,7 @@ services:
       - RESEND_API_KEY=${RESEND_API_KEY}
       - RESEND_WEBHOOK_SECRET=${RESEND_WEBHOOK_SECRET}
       - EMAIL_FROM_DEFAULT=${EMAIL_FROM_DEFAULT}
-      - DATABASE_URL=postgresql://emailworker:${EW_DB_PASSWORD}@postgres:5432/emailworker
+      - DATABASE_URL=postgresql+psycopg://emailworker:${EW_DB_PASSWORD}@postgres:5432/emailworker
     ports:
       - "127.0.0.1:8081:8081" # webhook receiver (fronted by Caddy in prod)
     depends_on:

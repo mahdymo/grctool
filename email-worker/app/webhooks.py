@@ -37,7 +37,9 @@ async def resend_webhook(request: Request) -> dict:
     }
     try:
         event = Webhook(settings.resend_webhook_secret).verify(payload, headers)
-    except WebhookVerificationError:
+    except Exception:
+        # WebhookVerificationError for bad signatures; any other failure
+        # (malformed secret, bad encoding) must also fail closed.
         raise HTTPException(status_code=401, detail="invalid webhook signature")
 
     event_type = event.get("type", "")

@@ -42,11 +42,20 @@ def expected_metrics(staging: dict) -> dict:
         denominator = assessed - counts["not_applicable"]
         compliance_pct = round(100 * counts["compliant"] / denominator, 1) if denominator else 0.0
         domains[slug] = {**counts, "assessed": assessed, "compliance_pct": compliance_pct}
+    # The source Mapping sheet contains rows referencing gaps that no longer
+    # exist in the register (stale rows). Only resolvable mappings import.
+    gap_ids = {g["gap_no"] for g in staging["gaps"]}
+    init_ids = {i["initiative_id"] for i in staging["initiatives"]}
+    resolvable = [
+        m for m in staging["mappings"]
+        if m["gap_no"] in gap_ids and m["initiative_id"] in init_ids
+    ]
     return {
         "domains": domains,
         "gap_count": len(staging["gaps"]),
         "initiative_count": len(staging["initiatives"]),
-        "mapping_count": len(staging["mappings"]),
+        "mapping_count": len(resolvable),
+        "orphaned_mappings": len(staging["mappings"]) - len(resolvable),
     }
 
 
@@ -60,7 +69,8 @@ def print_expected(expected: dict) -> None:
         )
     print(
         f"gaps={expected['gap_count']} initiatives={expected['initiative_count']} "
-        f"mappings={expected['mapping_count']}"
+        f"mappings={expected['mapping_count']} "
+        f"(+{expected['orphaned_mappings']} orphaned source mappings skipped)"
     )
 
 
@@ -85,7 +95,7 @@ def check_live_ciso(expected: dict, url: str, token: str, cycle: str) -> list[st
         while True:
             page = client.get(
                 "/requirement-assessments/",
-                params={"compliance_assessment__id": matches[0]["id"], "limit": 200, "offset": offset},
+                params={"compliance_assessment": matches[0]["id"], "limit": 200, "offset": offset},
             ).json()
             for ra in page["results"]:
                 result = ra.get("result") or "not_assessed"

@@ -130,7 +130,7 @@ def main() -> int:
         assessment = ensure_compliance_assessment(client, framework, name)
 
         req_assessments = client.get_all(
-            "/requirement-assessments/", compliance_assessment__id=assessment["id"]
+            "/requirement-assessments/", compliance_assessment=assessment["id"]
         )
         by_ref = {}
         for ra in req_assessments:

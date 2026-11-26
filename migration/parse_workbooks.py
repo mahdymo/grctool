@@ -54,7 +54,14 @@ def _iso(value: object) -> str | None:
         return None
     if isinstance(value, (datetime, date)):
         return value.date().isoformat() if isinstance(value, datetime) else value.isoformat()
-    return _norm(value)  # e.g. "Q4 2026" stays as-is (target quarter text)
+    text = _norm(value)
+    # Workbook dates are sometimes DD/MM/YYYY strings (e.g. assessment date)
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(text, fmt).date().isoformat()
+        except ValueError:
+            continue
+    return text  # e.g. "Q4 2026" stays as-is (target quarter text)
 
 
 def parse_assessment_statuses(workbook) -> tuple[dict, list[str]]:

@@ -48,18 +48,8 @@ print(plaintext)
 echo "  PAT minted: ${PAT:0:8}..."
 
 echo "== AC2: import IA SAT libraries =="
-for f in libraries/ia-sat-ml/v1.0/*.yaml; do
-  LIB_ID=$(curl -s -X POST "http://app.grc.localhost/api/stored-libraries/upload" \
-    -H "Authorization: Token $PAT" -F "file=@$f" | python -c "import json,sys; print(json.load(sys.stdin).get('id',''))" 2>/dev/null || true)
-  if [ -z "$LIB_ID" ]; then
-    # already uploaded -> find by urn
-    echo "  upload returned no id for $f (may already exist) — continuing"
-    continue
-  fi
-  result=$(curl -s -X POST "http://app.grc.localhost/api/stored-libraries/$LIB_ID/import" \
-    -H "Authorization: Token $PAT")
-  echo "  $(basename $f): $result"
-done
+python scripts/upload_libraries.py --url http://app.grc.localhost --token "$PAT" \
+  --dir libraries/ia-sat-ml/v1.0
 
 echo "== framework control counts (expect 112/131/17/39/42) =="
 docker exec grc-backend-customer1 python manage.py shell -c "

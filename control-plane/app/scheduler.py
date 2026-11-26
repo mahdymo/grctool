@@ -115,7 +115,7 @@ def _fetch_instance_metrics(customer: Customer) -> list[PortfolioMetric]:
             while True:
                 page = client.get(
                     "/requirement-assessments/",
-                    params={"compliance_assessment__id": assessment["id"],
+                    params={"compliance_assessment": assessment["id"],
                             "limit": 200, "offset": offset},
                 ).json()
                 for ra in page["results"]:

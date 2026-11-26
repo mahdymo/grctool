@@ -35,7 +35,8 @@ from pathlib import Path
 import openpyxl
 import yaml
 
-LIBRARY_VERSION = "1.0"
+LIBRARY_VERSION = 1  # CISO Assistant requires an integer library version
+LIBRARY_LABEL = "v1.0"  # human-facing label used in file/dir names
 LIBRARY_SLUG = "ia-sat-ml"
 PROVIDER = "Insurance Authority (KSA)"
 PACKAGER = "EhsanLab"
@@ -295,8 +296,8 @@ def build_library(slug: str, cfg: dict, controls: list[Control]) -> dict:
                 "urn": f"urn:intuitem:risk:framework:{LIBRARY_SLUG}-{slug}",
                 "ref_id": cfg["ref_id"],
                 "name": cfg["name"],
+                "requirement_nodes": build_nodes(slug, cfg, controls),
             },
-            "requirement_nodes": build_nodes(slug, cfg, controls),
         },
     }
 
@@ -335,7 +336,7 @@ def main() -> int:
         parser.error("--out-dir is required unless --validate-only")
     args.out_dir.mkdir(parents=True, exist_ok=True)
     for slug, library in libraries.items():
-        out = args.out_dir / f"{LIBRARY_SLUG}-{slug}-v{LIBRARY_VERSION}.yaml"
+        out = args.out_dir / f"{LIBRARY_SLUG}-{slug}-{LIBRARY_LABEL}.yaml"
         with out.open("w", encoding="utf-8") as fh:
             yaml.safe_dump(library, fh, allow_unicode=True, sort_keys=False, width=100)
         print(f"wrote {out}")
