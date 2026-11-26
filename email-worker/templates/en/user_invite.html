@@ -1,0 +1,7 @@
+{% extends base_template %}
+{% block content %}
+<p>Hello {{ recipient_name }},</p>
+<p>You have been invited to {{ platform_name }} as <strong>{{ role }}</strong> for <strong>{{ customer_name }}</strong>.</p>
+<p><a href="{{ invite_url }}" style="background:#0f4c81;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Accept invitation</a></p>
+<p>This link is single-use and expires in 24 hours.</p>
+{% endblock %}

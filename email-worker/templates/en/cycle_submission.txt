@@ -1,0 +1,10 @@
+Hello {{ recipient_name }},
+
+The {{ cycle }} IA SAT self-assessment for {{ customer_name }} has been submitted and is now locked.
+
+Compliance: {{ compliance_pct }}% ({{ submitted_by }} · {{ submitted_at }})
+
+View the report:
+{{ report_url }}
+
+This is an automated message. Do not reply.

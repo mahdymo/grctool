@@ -1,0 +1,24 @@
+IA SAT Compliance & Remediation Platform
+Copyright (C) 2026 EhsanLab
+
+This platform is built on CISO Assistant Community Edition
+(https://github.com/intuitem/ciso-assistant-community), licensed under
+AGPL-3.0, which is run UNMODIFIED as upstream container images pinned by
+digest in compose/docker-compose.yml.
+
+All EhsanLab custom code (converter/, migration/, control-plane/,
+email-worker/, keycloak/ config, deploy/ config) is licensed under
+AGPL-3.0 as well, to keep the combined offering compliant and simple.
+
+AGPL-3.0 section 13 notice: if you interact with a modified version of
+this platform over a network, you are entitled to receive the complete
+corresponding source code. The source is available at the repository
+this file ships with; for hosted deployments, a source link is published
+on each instance's login page footer.
+
+Third-party components and their licenses:
+- CISO Assistant Community Edition — AGPL-3.0 (intuitem)
+- Keycloak — Apache-2.0
+- Caddy — Apache-2.0
+- PostgreSQL — PostgreSQL License
+- Redis — RSALv2/SSPLv1 (or Valkey BSD-3 where substituted)

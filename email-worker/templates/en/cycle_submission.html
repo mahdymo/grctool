@@ -1,0 +1,7 @@
+{% extends base_template %}
+{% block content %}
+<p>Hello {{ recipient_name }},</p>
+<p>The <strong>{{ cycle }}</strong> IA SAT self-assessment for <strong>{{ customer_name }}</strong> has been submitted and is now locked.</p>
+<p>Compliance: <strong>{{ compliance_pct }}%</strong> ({{ submitted_by }} · {{ submitted_at }})</p>
+<p><a href="{{ report_url }}" style="background:#0f4c81;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">View report</a></p>
+{% endblock %}

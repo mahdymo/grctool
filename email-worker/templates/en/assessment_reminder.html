@@ -1,0 +1,6 @@
+{% extends base_template %}
+{% block content %}
+<p>Hello {{ recipient_name }},</p>
+<p>Reminder: the <strong>{{ cycle }}</strong> IA SAT self-assessment for <strong>{{ customer_name }}</strong> is due on <strong>{{ due_date }}</strong> ({{ days_remaining }} days remaining).</p>
+<p><a href="{{ assessment_url }}" style="background:#0f4c81;color:#fff;padding:10px 20px;text-decoration:none;border-radius:4px;">Open assessment</a></p>
+{% endblock %}

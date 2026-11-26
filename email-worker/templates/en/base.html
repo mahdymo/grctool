@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ locale | default('en') }}">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body style="font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; max-width: 600px; margin: 0 auto; padding: 24px;">
+  <div style="border-bottom: 3px solid #0f4c81; padding-bottom: 12px; margin-bottom: 24px;">
+    <strong style="font-size: 18px;">{{ platform_name }}</strong>
+  </div>
+  {% block content %}{% endblock %}
+  <div style="border-top: 1px solid #ddd; margin-top: 32px; padding-top: 12px; font-size: 12px; color: #666;">
+    This is an automated message from {{ platform_name }}. Do not reply.
+  </div>
+</body>
+</html>

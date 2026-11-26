@@ -1,0 +1,70 @@
+{
+  "realm": "partner-a",
+  "enabled": true,
+  "displayName": "Partner A (whitelabel demo)",
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "accessTokenLifespan": 900,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 28800,
+  "accessCodeLifespan": 86400,
+  "actionTokenGeneratedByAdminLifespan": 86400,
+  "bruteForceProtected": true,
+  "failureFactor": 5,
+  "waitIncrementSeconds": 60,
+  "maxFailureWaitSeconds": 900,
+  "permanentLockout": false,
+  "roles": {
+    "realm": [
+      { "name": "partner-admin", "description": "Partner Admin — own realm + own customers only (spec 5.2)" },
+      { "name": "customer-admin", "description": "Customer Admin — own instance only" },
+      { "name": "control-owner", "description": "Control Owner — assigned controls/initiatives only" },
+      { "name": "auditor", "description": "Auditor — read + export reports (spec 5.2 resolution)" }
+    ]
+  },
+  "groups": [
+    {
+      "name": "customers",
+      "subGroups": [
+        {
+          "name": "customer1",
+          "realmRoles": [],
+          "attributes": { "instance": ["customer1"] }
+        }
+      ]
+    }
+  ],
+  "requiredActions": [
+    {
+      "alias": "CONFIGURE_TOTP",
+      "name": "Configure OTP",
+      "providerId": "CONFIGURE_TOTP",
+      "enabled": true,
+      "defaultAction": true
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "ciso-assistant-partner-a-customer1",
+      "name": "CISO Assistant — Partner A / customer1",
+      "enabled": true,
+      "protocol": "saml",
+      "attributes": {
+        "saml.signature.algorithm": "RSA_SHA256",
+        "saml.force.post.binding": "true",
+        "saml.client.signature": "false",
+        "saml_name_id_format": "email"
+      },
+      "redirectUris": ["http://partner-a.grc.localhost/*"]
+    }
+  ],
+  "identityProviders": [],
+  "passwordPolicy": "length(12) and notUsername and notEmail",
+  "internationalizationEnabled": true,
+  "supportedLocales": ["en", "ar"],
+  "defaultLocale": "en"
+}

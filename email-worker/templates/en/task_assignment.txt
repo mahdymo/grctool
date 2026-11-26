@@ -1,0 +1,11 @@
+Hello {{ recipient_name }},
+
+A task has been assigned to you:
+
+{{ item_id }} — {{ title }}
+{% if due_date %}Target date: {{ due_date }}
+{% endif %}
+View the task:
+{{ item_url }}
+
+This is an automated message. Do not reply.

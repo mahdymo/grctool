@@ -1,0 +1,1310 @@
+convert_library_version: v2
+urn: urn:intuitem:risk:library:ia-sat-ml-emerging-tech
+locale: en
+ref_id: IA Emerging Tech (IA SAT M&L)
+name: IA SAT — Emerging Technology
+description: Insurance Authority Self-Assessment Tool (Medium & Low risk entities) — IA SAT — Emerging
+  Technology. Converted verbatim from the IA SAT workbook by the grctool converter; do not edit by hand.
+version: '1.0'
+provider: Insurance Authority (KSA)
+packager: EhsanLab
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:ia-sat-ml-emerging-tech
+    ref_id: IA Emerging Tech
+    name: IA SAT — Emerging Technology
+  requirement_nodes:
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    assessable: false
+    depth: 1
+    ref_id: IA Emerging Tech
+    name: IA SAT — Emerging Technology
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:1-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 1-1
+    name: AI strategy shall be documented, approved, and aligned with cybersecurity and…
+    description: 'AI strategy shall be documented, approved, and aligned with cybersecurity and business
+      objectives. Strategy shall address use cases, risk tolerance, and governance models. Noting that
+      this strategy could be a part of the overall cybersecurity strategy.
+
+
+      **Implementation guide**
+
+
+      Develop comprehensive AI strategy aligned with organizational objectives and cybersecurity framework.
+      Document approved AI use cases, define risk appetite for AI implementations, and establish governance
+      model. Strategy may be standalone or integrated into overall cybersecurity strategy with dedicated
+      AI section.
+
+
+      **Verification method**
+
+
+      Review strategy document, verify approval, assess alignment with business objectives'
+    typical_evidence: • Documented AI strategy (or AI section within cybersecurity strategy) covering
+      use cases, risk tolerance, and governance. • Board/executive approval records • Alignment mapping
+      to business objectives
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:1-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 1-2
+    name: Strategy shall explicitly address AI fairness, bias detection, and algorithmi…
+    description: 'Strategy shall explicitly address AI fairness, bias detection, and algorithmic transparency.
+
+
+      **Implementation guide**
+
+
+      Include dedicated sections in AI strategy / policy covering: fairness principles and objectives,
+      bias detection methodology, algorithmic transparency requirements, and ethical AI commitments.
+
+
+      **Verification method**
+
+
+      Verify that the AI strategy / Policy is approved and is covering AI fairness, bias, and transparency
+      requirements'
+    typical_evidence: • AI strategy or AI policy section that defines principles and objectives for fairness,
+      bias detection, and transparency. • Documented approach/methodology for bias assessment and monitoring
+      (e.g., testing, metrics, review cadence). • Transparency requirements • Ethical AI principles
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:2-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 2-1
+    name: IoT strategy shall be documented, approved, and aligned with cybersecurity an…
+    description: 'IoT strategy shall be documented, approved, and aligned with cybersecurity and business
+      objectives. Strategy shall address use cases, risk tolerance, and governance models. Noting that
+      this strategy could be a part of the overall cybersecurity strategy.
+
+
+      **Implementation guide**
+
+
+      Develop comprehensive IoT strategy aligned with organizational objectives and cybersecurity framework.
+      Document approved IoT use cases (telematics, sensors, etc.), define risk appetite, and establish
+      governance model. Strategy may be standalone or integrated into overall cybersecurity strategy.
+
+
+      **Verification method**
+
+
+      Review strategy document, verify approval, assess alignment'
+    typical_evidence: • Documented IoT strategy (or IoT section within the cybersecurity/technology strategy)
+      covering use cases, risk tolerance, and governance model. • Board/executive approval records • Alignment
+      mapping to business objectives
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:2-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 2-2
+    name: Strategy shall explicitly address IoT device lifecycle management (inventory,…
+    description: 'Strategy shall explicitly address IoT device lifecycle management (inventory, patches,
+      decommission).
+
+
+      **Implementation guide**
+
+
+      In the IoT strategy, define how IoT devices will be inventoried, kept up to date (patches/firmware),
+      and securely decommissioned (data wipe, removal from network and inventory). Link these to existing
+      asset, patch, and change‑management processes, with clear ownership.
+
+
+      **Verification method**
+
+
+      Check the strategy and related standards to confirm explicit coverage of IoT inventory, patching,
+      and decommissioning. Review a sample IoT inventory and recent patch/decommission records to verify
+      lifecycle controls are applied in practice.'
+    typical_evidence: • IoT or cybersecurity strategy section describing IoT device lifecycle management
+      (inventory, patching, decommissioning). • Supporting standard/procedure for IoT inventory, vulnerability/patch
+      management, and decommissioning steps. • Sample IoT inventory or register showing devices, status,
+      and lifecycle fields (e.g., in‑service, under maintenance, decommissioned).
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:3-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 3-2
+    name: Roles and responsibilities for AI risk management shall be defined, documente…
+    description: 'Roles and responsibilities for AI risk management shall be defined, documented, and
+      communicated. Clear ownership of: AI model validation, fairness testing, vulnerability management,
+      incident response, and vendor risk management.
+
+
+      **Implementation guide**
+
+
+      Create an AI risk RACI that clearly maps each activity (validation, fairness, vulnerabilities, incidents,
+      vendor risk) to specific functions/roles and align it with existing risk and cyber governance. Approve
+      it via the AI/cyber committee and publish to all impacted teams.
+
+
+      **Verification method**
+
+
+      Review the RACI/roles documents and charters to confirm each AI risk area has a named owner. Check
+      evidence of communication and, if possible, meeting minutes or workflows showing those roles actively
+      performing their duties.'
+    typical_evidence: • RACI/roles document or AI risk management guideline assigning owners for model
+      validation, fairness testing, vulnerability management, incident response, and AI vendor risk. •
+      Ownership assignments • Communication records • Organization chart with AI roles
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:4-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 4-2
+    name: Roles and responsibilities for IoT risk management shall be defined, document…
+    description: 'Roles and responsibilities for IoT risk management shall be defined, documented, and
+      communicated. Clear ownership of: IoT vulnerability management, incident response, and vendor risk
+      management.
+
+
+      **Implementation guide**
+
+
+      Create an IoT risk RACI mapping vulnerability management, incident response, and vendor risk to
+      specific functions and align it with existing cyber/risk governance. Get it approved by the cyber/IoT
+      committee and publish to all impacted teams.
+
+
+      **Verification method**
+
+
+      Review the RACI/roles documents and charters to confirm each IoT risk area has a named owner. Check
+      communication evidence and, where possible, minutes or workflows showing those roles actively performing
+      these duties this could also be validated by inperson meetings with owners.'
+    typical_evidence: • RACI/roles document assigning owners for IoT vulnerability management, IoT incident
+      response, and IoT vendor risk management.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:5-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 5-2
+    name: 'Policies for third-party AI vendor risk management shall address: vendor sele…'
+    description: 'Policies for third-party AI vendor risk management shall address: vendor selection criteria,
+      security assessments, SLA requirements, data protection clauses, incident notification, and audit
+      rights.
+
+
+      **Implementation guide**
+
+
+      update vendor risk and procurement policies to require defined criteria for AI vendors, formal security/privacy
+      assessment, and minimum contract clauses (SLAs, data protection, incident notification, audit rights).
+      Make these mandatory at onboarding and renewal for all material AI vendors.
+
+
+      **Verification method**
+
+
+      Review the policy and contract templates to confirm they cover all listed items. Check a sample
+      of AI vendor assessments and contracts to verify these requirements are implemented, with any exceptions
+      documented and approved.'
+    typical_evidence: • Approved third‑party/AI vendor risk policy or procedure covering selection criteria,
+      security assessment, SLAs, data protection, incident notification, and audit rights. • Standard
+      contract/SLA template (or clause set) including these AI‑specific requirements. • Sample signed
+      AI vendor contract or risk assessment showing these elements applied.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:6-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 6-2
+    name: 'Policies for third-party IoT vendor risk management shall address: vendor sel…'
+    description: 'Policies for third-party IoT vendor risk management shall address: vendor selection
+      criteria, security assessments, SLA requirements, data protection clauses, incident notification,
+      and audit rights.
+
+
+      **Implementation guide**
+
+
+      Develop third-party IoT vendor policy covering: selection criteria (security certifications, firmware
+      update commitment, vulnerability disclosure), security assessment requirements, SLA requirements
+      (device availability, support response), data protection clauses (encryption, secure transmission),
+      incident notification timelines, and audit rights provisions.
+
+
+      **Verification method**
+
+
+      Review policy and IoT contract templates to confirm all listed items are covered. Sample IoT vendor
+      assessments and contracts to verify the requirements are implemented, and that any exceptions are
+      documented and approved.'
+    typical_evidence: • Approved third‑party/IoT vendor risk policy or procedure covering selection criteria,
+      security assessment, SLAs, data protection, incident notification, and audit rights. • Standard
+      IoT contract/SLA template (or clause pack) including these requirements. • Sample signed IoT vendor
+      contract or completed vendor risk assessment showing these elements applied.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:7-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 7-1
+    name: AI model risk assessment methodology shall be established and implemented. As…
+    description: 'AI model risk assessment methodology shall be established and implemented. Assessment
+      shall evaluate: (1) model accuracy and performance (2) fairness and bias risks (3) data quality
+      and source verification (4) robustness to adversarial inputs (5) explainability and transparency
+      (6) privacy and security controls.
+
+
+      **Implementation guide**
+
+
+      Define a standard model risk assessment template and scoring scheme that explicitly covers the six
+      dimensions and links to control requirements and remediation actions. Integrate the assessment into
+      the model lifecycle (design, pre‑deployment, periodic review, and material change events), assign
+      accountable owners, and ensure outputs feed into risk registers and mitigation plans.
+
+
+      **Verification method**
+
+
+      Review the methodology to confirm all six dimensions are in scope with clear criteria, scales, and
+      triggers for reassessment. Sample recent assessments across different model types to verify consistent
+      use of the methodology and trace identified risks to documented mitigation, acceptance, or model
+      retirement decisions.'
+    typical_evidence: • Approved, documented AI model risk assessment methodology or standard describing
+      the assessment process, responsibilities, and explicit coverage of accuracy/performance, fairness/bias,
+      data quality/source verification, robustness to adversarial inputs, explainability/transparency,
+      and privacy/security. • Sample completed AI model risk assessment(s) for at least one in‑scope model,
+      showing how each of the six risk dimensions was evaluated, risk ratings assigned, and resulting
+      actions or compensating controls. • Risk register for AI models
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:7-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 7-2
+    name: Risk assessment results shall be reviewed at planned intervals (minimum annua…
+    description: 'Risk assessment results shall be reviewed at planned intervals (minimum annually, or
+      when significant changes occur to models, data, or systems). Reassessment required when: (1) model
+      performance degrades >5% (2) new fairness concerns emerge (3) significant data distribution change
+      (4) regulatory changes.
+
+
+      **Implementation guide**
+
+
+      Set minimum annual review for all material AI model risk assessments and define automated/operational
+      checks for performance, fairness issues, data drift, and regulatory changes that trigger earlier
+      reassessment. Ensure the governance forum tracks upcoming reviews and triggered reassessments and
+      records outcomes and actions.
+
+
+      **Verification method**
+
+
+      Review the AI model risk assessment procedure / methodology to confirm annual review plus the four
+      triggers are documented. For a sample of models, check assessment dates, next review dates, and
+      whether any triggers occurred and led to timely reassessment.'
+    typical_evidence: • AI model risk assessment procedure / methodology defining review frequency and
+      explicit reassessment triggers. • Sample AI model risk assessment showing next review date and documented
+      trigger checks (e.g., performance, data, regulatory changes). • Evidence of at least one reassessment
+      performed due to a trigger (e.g., >5% performance drop or data shift) with updated assessment. if
+      available
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:8-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 8-1
+    name: IoT device risk assessment shall be conducted at planning and deployment stag…
+    description: 'IoT device risk assessment shall be conducted at planning and deployment stages. Assessment
+      shall evaluate: (1) device security baseline (2) network exposure (3) data sensitivity (4) vulnerability
+      landscape (5) supply chain risks (6) communication protocols and encryption.
+
+
+      **Implementation guide**
+
+
+      Define and approve a structured IoT risk assessment mathodology / procedure covering the six dimensions
+      and mandate its use at design/planning and again before go‑live. Integrate it into the project/change
+      process so no IoT deployment proceeds without completed assessment, defined controls, and risk owner
+      sign‑off.
+
+
+      **Verification method**
+
+
+      Review the IoT risk assessment procedure/methodology to confirm all six dimensions and both stages
+      (planning, deployment) are covered. For a sample of IoT projects, check completed assessments and
+      approvals at the required stages and verify that identified risks have documented treatments.'
+    typical_evidence: • IoT risk assessment methodology / procedure describing when assessments are required
+      (planning and deployment) and how to evaluate device baseline hardening, network exposure, data
+      sensitivity, vulnerabilities, supply chain risks, and communication security. • Sample completed
+      IoT risk assessment(s) for at least one implementation showing analysis and ratings for each of
+      the six dimensions, with documented controls or decisions for the planning and deployment stages.
+      • Risk register for IoT devices
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:8-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 8-2
+    name: Risk assessment results shall be reviewed at planned intervals (minimum annua…
+    description: 'Risk assessment results shall be reviewed at planned intervals (minimum annually, or
+      when significant changes occur to models, data, or systems). Reassessment required when: (1) significant
+      data distribution change (2) IoT device firmware update (3) regulatory changes.
+
+
+      **Implementation guide**
+
+
+      Define in the IoT risk methodology / procedure that all IoT solutions undergo annual risk review,
+      plus ad‑hoc reassessment whenever there is significant IoT data pattern change, device firmware
+      update, or regulatory change. Integrate these triggers into IoT change management so no major IoT
+      change is deployed without checking whether a reassessment is required and recording the decision
+      and outcome.
+
+
+      **Verification method**
+
+
+      Review the methodology / Procedure to confirm that an annual review is mandated and the three triggers
+      are explicitly documented. For a sample of IoT solutions, check assessment dates, next review dates,
+      and whether any triggers led to timely reassessment with recorded outcomes.'
+    typical_evidence: '• Methodology / procedure defining minimum annual review of IoT risk assessments
+      and explicit reassessment triggers (data distribution shifts, IoT firmware changes, regulatory changes).
+      • Register, schedule, or tracker showing planned review dates, completion status, and outcomes for
+      IoT solutions over the past period. • Sample IoT reassessment package (updated IoT risk assessment
+      and related change/approval records) demonstrating that a review was performed after at least one
+      of: major change in IoT data patterns/usage, firmware upgrade on IoT devices, or new/changed IoT‑relevant
+      regulations. If available'
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:9-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 9-1
+    name: Secure development environment shall be established for AI model development,…
+    description: 'Secure development environment shall be established for AI model development, training,
+      and testing. Environment shall be logically isolated from production systems, with strict access
+      controls, activity logging, and no production data (or only anonymized/encrypted).
+
+
+      **Implementation guide**
+
+
+      Set up dedicated AI dev/test environments separated from production networks and systems, with role‑based
+      access and full activity logging. Via approved policy, prohibit direct connections to production
+      databases and require only anonymized, masked, or encrypted production extracts via governed pipelines.
+      Periodically review access and logs to ensure isolation and data handling rules are enforced.
+
+
+      **Verification method**
+
+
+      Review environment and network designs, IAM settings, and policies to confirm logical isolation,
+      strict access control, and logging are in place for AI dev/test. Inspect sample datasets, pipelines,
+      and tickets to verify only anonymized/encrypted production data is used and that no direct production
+      data access exists from the AI development environment.'
+    typical_evidence: • Policy document describing the AI development, training, and testing environments,
+      logical isolation from production, access control requirements, and rules prohibiting raw production
+      data (allowing only anonymized/encrypted datasets). • Sample evidence (e.g., screenshots/config
+      exports or tickets) showing that only masked/anonymized/encrypted production data is used in AI
+      dev/test, and that attempts to access raw production data are prevented or controlled.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:9-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 9-2
+    name: Model artifacts and training data shall be protected with encryption, access…
+    description: 'Model artifacts and training data shall be protected with encryption, access controls,
+      and retention policies. Sensitive model parameters, training data, and intermediate outputs shall
+      not be logged or stored insecurely.
+
+
+      **Implementation guide**
+
+
+      Store all model artifacts and training data only in approved, encrypted repositories with role‑based
+      access and defined retention and deletion rules. Ensure pipelines and platforms are configured so
+      that sensitive parameters, raw training data, and intermediate outputs are never written to general
+      logs or unsecured storage, using masking or redaction where logging is required.
+
+
+      **Verification method**
+
+
+      Review standard / policy and technical configs to confirm encryption, RBAC, and retention are defined
+      and enforced for AI artifacts and data, and that logging of sensitive AI elements is restricted
+      or disabled. Sample storage locations and logs for selected models to verify data is encrypted,
+      access is limited, and no sensitive model parameters/training data/intermediate outputs are present
+      in logs or insecure locations.'
+    typical_evidence: • Security/AI data handling standard/policy defining encryption requirements, access
+      control rules, and retention periods for model artifacts, training data, and derived outputs, plus
+      a clear prohibition on logging/storing sensitive AI data and parameters in insecure locations..
+      • Architecture/configuration documentation showing where model artifacts and training data are stored,
+      which encryption is applied, how access is restricted (IAM/RBAC), and how retention and secure deletion
+      are implemented. • Sample evidence (e.g., storage and logging configuration screenshots/exports)
+      demonstrating encrypted storage, restricted access to model repositories and data stores, and logging
+      settings that exclude or mask sensitive parameters, training records, and intermediate outputs.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:10-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 10-1
+    name: IoT networks shall be logically and/or physically separated from corporate IT…
+    description: 'IoT networks shall be logically and/or physically separated from corporate IT networks
+      using firewalls and network segmentation. IoT devices shall not have direct access to critical systems
+      (e.g., policy administration, claims processing) without explicit approval and monitoring.
+
+
+      **Implementation guide**
+
+
+      Place IoT devices into dedicated network segments or VLANs, separated from corporate IT and critical
+      systems by firewalls ensuring it is docuemnted in the approved network security policy / standard.
+      Define strict rules that block direct IoT access to policy administration, claims, and similar core
+      systems, allowing only documented exceptions with least‑privilege rules and continuous monitoring.
+
+
+      **Verification method**
+
+
+      Review network standards, diagrams, and firewall rule sets to confirm IoT–corporate segmentation
+      and blocked direct paths to critical systems, with any exceptions formally approved. Validate via
+      sample traffic/log analysis or controlled connectivity tests from IoT segments that only explicitly
+      approved and monitored connections to critical systems are possible.'
+    typical_evidence: • Network/security standard or architecture document describing dedicated IoT segments/VLANs
+      and required separation from corporate IT and critical systems. • Network diagrams and/or firewall/segmentation
+      configurations showing distinct IoT network zones, restricted paths to corporate and critical systems,
+      and any explicitly approved exceptions. • Sample firewall/traffic logs or access reviews demonstrating
+      that IoT devices do not directly reach critical systems except for documented, approved, and monitored
+      connections.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:10-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 10-2
+    name: IoT device communication shall use secure protocols and encryption. Protocols…
+    description: 'IoT device communication shall use secure protocols and encryption. Protocols: HTTPS,
+      MQTTS, CoAPS (not HTTP, MQTT, CoAP unencrypted). TLS 1.2 minimum, certificate pinning for critical
+      connections.
+
+
+      **Implementation guide**
+
+
+      Configure IoT devices and gateways to use only HTTPS, MQTTS, or CoAPS with TLS 1.2+; disable unencrypted
+      HTTP/MQTT/CoAP ports and ciphers. Implement certificate pinning on devices or gateways for critical
+      back‑end services (e.g., policy/claims APIs, IoT platforms) and periodically review protocol/TLS
+      settings against current security baselines.
+
+
+      **Verification method**
+
+
+      Review IoT standards and configs to confirm only secure protocols are enabled, TLS 1.2+ is enforced,
+      and pinning is configured for critical connections.'
+    typical_evidence: • IoT communication/security standard / Network policy or architecture document
+      mandating HTTPS/MQTTS/CoAPS only, prohibiting plain HTTP/MQTT/CoAP, requiring TLS 1.2+ and certificate
+      pinning for critical IoT connections. • Configuration/implementation documentation (e.g., device/gateway
+      settings, broker/load balancer configs) showing enabled secure protocols, TLS 1.2+ enforcement,
+      disabled insecure ports, and pinning setup for critical endpoints.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:11-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 11-1
+    name: Data used for training and testing AI models shall meet defined quality stand…
+    description: 'Data used for training and testing AI models shall meet defined quality standards. Standards
+      shall include: completeness (missing value rates <5%), consistency (schema validation), accuracy
+      (source verification), timeliness (recency for training data), and absence of obvious anomalies/outliers.
+
+
+      **Implementation guide**
+
+
+      Establish and enforce AI data quality standards: Completeness: Missing value rates <5% (automated
+      monitoring), Consistency: Schema validation on all data ingestion, Accuracy: Source verification
+      procedures and documentation, Timeliness: Data recency requirements by model type (documented),
+      Anomaly detection: Statistical outlier detection before training. Document quality assessment for
+      all training and testing datasets.
+
+
+      **Verification method**
+
+
+      Review the AI data quality standard and confirm all required dimensions and thresholds (e.g., <5%
+      missing) are specified. Examine recent model training/testing runs and their data quality reports
+      to verify checks ran, results met thresholds, and issues (if any) were tracked and resolved.'
+    typical_evidence: • Approved AI data quality standard/procedure defining quantitative rules for completeness
+      (e.g., missing values <5%), schema validation, source/accuracy checks, timeliness requirements,
+      and anomaly/outlier handling for training and testing datasets. • Data quality assessment/report
+      for at least one model showing metrics and results for missing value rates, schema validation, source
+      verification steps, data freshness, and anomaly/outlier detection, including any remediation actions
+      taken.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:11-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 11-2
+    name: AI model training data shall be regularly audited for bias, fairness, and rep…
+    description: 'AI model training data shall be regularly audited for bias, fairness, and representativeness.
+      Audits shall identify: (1) underrepresentation of protected groups (2) historical bias (unfair treatment
+      of groups in past decisions) (3) data label quality issues (4) confounding variables.
+
+
+      **Implementation guide**
+
+
+      Implement regular training data audits /assessments minimum annually, or before major model updates)
+      covering: (1) Protected group representation analysis (demographic parity), (2) Historical bias
+      detection in outcome labels (unfair past decisions), (3) Data label quality assessment (accuracy,
+      consistency), (4) Confounding variable identification (proxy discrimination). Document findings
+      and remediation actions.
+
+
+      **Verification method**
+
+
+      Review the AI fairness/bias standard and confirm it covers underrepresentation, historical bias,
+      label quality, and confounders plus defined frequency and responsibilities. Inspect recent audit
+      reports and follow‑up records to verify that training datasets were assessed against these criteria
+      and that identified issues were tracked, remediated, or formally accepted.'
+    typical_evidence: • Approved AI fairness/bias assessment standard or procedure defining required periodic
+      audits, protected groups to be considered, and methods to detect underrepresentation, historical
+      bias, label issues, and confounders. • Sample bias/fairness audit report for at least one model’s
+      training data showing group distribution analysis, checks for historical bias in outcomes, label
+      quality review, and identification/handling of confounding variables. •Evidence of remediation and
+      governance (e.g., issue logs, model risk/compliance review minutes) showing how identified bias,
+      label problems, or confounders were addressed or accepted with rationale.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:12-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 12-1
+    name: AI models, model parameters, and associated metadata shall be encrypted at re…
+    description: 'AI models, model parameters, and associated metadata shall be encrypted at rest using
+      AES-256 or equivalent. Models in transit shall use TLS 1.2+. Model artifacts shall be digitally
+      signed to ensure integrity and prevent tampering.
+
+
+      **Implementation guide**
+
+
+      Implement comprehensive model protection: Encryption at rest: AES-256 for all model files, parameters,
+      and metadata, Encryption in transit: TLS 1.2+ (TLS 1.3 preferred) for all model transfers, Digital
+      signatures: Sign all model artifacts before deployment, Integrity verification: Verify signatures
+      before model loading/execution. Document encryption standards and signature verification procedures.
+
+
+      **Verification method**
+
+
+      Review security/crypto standards and platform configs to confirm AES‑256‑class encryption at rest,
+      TLS 1.2+ in transit, and a documented signing/verification process. Validate a sample of model artifacts
+      and flows to ensure encryption is active, connections negotiate TLS 1.2+, and signatures are present,
+      valid, and enforced before use.'
+    typical_evidence: • Cryptography/AI security standard specifying AES‑256 (or equivalent) for model
+      storage, TLS 1.2+ for transport, and mandatory digital signing of model artifacts. • Configuration/architecture
+      documentation showing encrypted model repositories/storage, TLS 1.2+ (or higher) endpoints for model
+      movement, and signing/verification process for model artifacts. • Sample evidence (e.g., platform
+      settings, key management configs, or command outputs/screenshots) demonstrating models are stored
+      encrypted, transferred over TLS 1.2+, and that signatures are generated and verified before deployment/use.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:13-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 13-1
+    name: Continuous monitoring for AI model performance degradation and fairness drift…
+    description: 'Continuous monitoring for AI model performance degradation and fairness drift shall
+      be implemented. Monitoring metrics: (1) accuracy (monthly, threshold ≥95%) (2) fairness metrics
+      (disparate impact ratio, individual fairness, quarterly) (3) prediction latency (4) data drift (training
+      vs. production distribution) (5) fairness alerts (automatic when metrics breach thresholds).
+
+
+      **Implementation guide**
+
+
+      Implement a standardized monitoring process/standard for all in‑scope AI models that continuously
+      tracks accuracy, fairness, latency, and data drift against defined thresholds, generates automatic
+      alerts when these thresholds are breached, and routes those alerts into existing incident/change
+      management workflows to ensure timely investigation, remediation (e.g., retraining, recalibration,
+      rollback), and proper documentation of decisions and actions.
+
+
+      **Verification method**
+
+
+      Review monitoring standards and dashboards to confirm all required metrics, cadences, and thresholds
+      are defined and implemented. Sample recent alerts and associated tickets/change records to verify
+      that performance or fairness breaches generated alerts, were investigated, and led to documented
+      decisions such as retraining, model updates, or risk acceptance.'
+    typical_evidence: • Monitoring and alerting standard/runbook defining required model KPIs (accuracy
+      with ≥95% threshold, fairness metrics and frequencies, latency, data drift), review cadence (monthly/quarterly),
+      and alerting rules when thresholds are breached. • Sample monitoring dashboard/screenshots or exported
+      reports for at least one production model showing monthly accuracy, quarterly fairness metrics,
+      latency, and data‑drift indicators over time, including any threshold breaches. • Evidence of alerts
+      and follow‑up (e.g., alert logs, incident/change tickets, model retraining records) demonstrating
+      that when performance or fairness thresholds were breached, alerts fired and remediation actions
+      (investigation, retraining, threshold adjustment, or rollback) were taken.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:14-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 14-1
+    name: IoT device health and security monitoring shall be implemented. Monitoring sh…
+    description: 'IoT device health and security monitoring shall be implemented. Monitoring shall include:
+      (1) device connectivity (online/offline status) (2) firmware version tracking (3) communication
+      anomalies (unexpected traffic patterns) (4) security event detection (failed auth attempts, suspicious
+      API calls) (5) data collection anomalies (data quality issues).
+
+
+      **Implementation guide**
+
+
+      Implement centralized IoT fleet monitoring that continuously tracks device connectivity, firmware
+      version compliance, network and API anomalies, security events, and data‑quality indicators, with
+      automated alerting and clear operational procedures so that identified issues are promptly investigated,
+      devices or networks adjusted (e.g., patching, isolation, rule changes), and actions documented through
+      existing incident and change management processes.
+
+
+      **Verification method**
+
+
+      Review IoT monitoring standards and dashboards to confirm coverage of connectivity, firmware, communication
+      anomalies, security events, and data‑quality checks. Sample recent alerts and tickets to verify
+      that issues detected by monitoring led to timely investigation, remediation (e.g., firmware updates,
+      device isolation), and closure with documented outcomes.'
+    typical_evidence: • IoT monitoring and operations standard/runbook defining required health and security
+      metrics (connectivity, firmware versions, communication anomalies, security events, data‑quality
+      checks) and responsibilities for review and response • Monitoring platform/dashboard configuration
+      or screenshots showing fleet‑wide visibility of device status, firmware compliance, traffic/anomaly
+      indicators, security alerts, and data‑quality metrics. • Sample alerts and follow‑up records (e.g.,
+      incident tickets, change requests, remediation logs) demonstrating that detected connectivity issues,
+      anomalous traffic, security events, or data anomalies are investigated and resolved.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:15-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 15-1
+    name: Incident response procedures for AI-related incidents shall be documented and…
+    description: 'Incident response procedures for AI-related incidents shall be documented and tested.
+      Incident types: (1) model compromise/tampering (2) training data breach (3) model performance degradation/bias
+      emergent (4) adversarial attacks (5) fairness violations discovered. Response plan shall include
+      detection, containment, remediation, and communication steps.
+
+
+      **Implementation guide**
+
+
+      Establish and approve dedicated AI incident response playbooks that integrate with the entitie''s
+      general incident management process, explicitly cover model compromise, training data breaches,
+      performance/fairness issues, and adversarial attacks, and clearly define for each scenario how incidents
+      are detected, contained (including model suspension or rollback), remediated (e.g., retraining,
+      data correction, control strengthening), and communicated to all relevant internal and external
+      stakeholders.
+
+
+      **Verification method**
+
+
+      Review the documented AI incident response procedures to confirm they cover all specified AI incident
+      types and include clear detection, containment, remediation, and communication steps aligned with
+      the enterprise incident framework. Check evidence from recent AI‑related incidents or exercises
+      to verify that these procedures were applied in practice, and that outputs such as model rollback,
+      bias correction, or data remediation were completed, documented, and approved.'
+    typical_evidence: • Documented AI incident response procedure or playbook that explicitly covers the
+      listed incident types (model compromise/tampering, training data breach, performance degradation/bias,
+      adversarial attacks, fairness violations) and describes detection, containment, remediation, and
+      internal/external communication steps. • Records from at least one test or exercise (e.g., tabletop,
+      simulation, or drill) of an AI‑related incident scenario showing participation, actions taken across
+      the four phases, lessons learned, and follow‑up improvements. • Sample incident records/tickets
+      for real or test incidents demonstrating that the AI IR procedure was followed.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:16-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 16-1
+    name: Incident response procedures for IoT-related incidents shall be documented. I…
+    description: 'Incident response procedures for IoT-related incidents shall be documented. Incident
+      types: (1) device compromise/infection (2) data breach (device or communication) (3) device communication
+      disruption (4) supply chain compromise. Response plan shall include: detection, isolation, investigation,
+      remediation, and restoration.
+
+
+      **Implementation guide**
+
+
+      Establish and approve IoT‑specific incident response playbooks, aligned with the enterprise incident
+      process, that define how to detect IoT incidents, promptly isolate affected devices or network segments,
+      investigate causes (including firmware and supply chain issues), execute remediation (e.g., patching,
+      re‑imaging, revoking credentials, replacing vendors/devices), and safely restore normal operations
+      while documenting all actions and decisions.
+
+
+      **Verification method**
+
+
+      Review IoT incident response documentation to confirm it covers the four specified incident types
+      and all required phases (detection, isolation, investigation, remediation, restoration) with clear
+      roles and escalation paths. Sample recent IoT incidents or exercises to verify that these procedures
+      were followed end‑to‑end and that isolation, remediation, and restoration steps, along with approvals
+      and lessons learned, are recorded in incident and change management systems.'
+    typical_evidence: • Documented IoT incident response procedure or playbook that explicitly covers
+      device compromise/infection, IoT data/communication breaches, communication disruption, and supply
+      chain compromise, and defines phases for detection, isolation, investigation, remediation, and restoration.
+      • Sample incident records or tickets (real or test) for at least one IoT‑related incident showing
+      how the procedure was applied across all phases (e.g., detection alert, device/network isolation,
+      root‑cause analysis, patching or replacement, and service restoration). • Evidence of testing or
+      exercising IoT incident procedures (e.g., tabletop exercise minutes or drill reports) demonstrating
+      that relevant teams practiced the documented steps and captured lessons learned and improvements.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:17-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 17-1
+    name: Cybersecurity requirements for third-party vendors providing AI services shal…
+    description: 'Cybersecurity requirements for third-party vendors providing AI services shall be identified
+      and enforced through contracts and SLAs. Requirements shall include: (1) secure development practices
+      (code review, testing) (2) vulnerability management (3) data protection and encryption (4) incident
+      notification (<24 hours) (5) audit rights; (6) compliance with applicable standards (NCA ECC, ISO
+      42001).
+
+
+      **Implementation guide**
+
+
+      Define standard AI‑specific cybersecurity clauses and control requirements for all third‑party AI
+      providers, make their inclusion mandatory in procurement and contracting (covering secure development,
+      vulnerability management, encryption, <24‑hour incident notification, audit rights, and NCA ECC/ISO
+      42001 compliance), and embed periodic security reviews and remediation follow‑up into the vendor
+      management process.
+
+
+      **Verification method**
+
+
+      Review third‑party risk/contracting policies and a sample of AI vendor contracts/SOWs to confirm
+      that all required cybersecurity clauses are present and enforceable, with no unjustified exceptions.
+      Examine vendor assessment reports, attestations, and issue logs for selected AI providers to verify
+      that secure development, vulnerability management, data protection, incident notification, audit
+      rights, and standards compliance are actively monitored and that identified gaps have documented
+      remediation plans and deadlines.'
+    typical_evidence: '• Third‑party risk/security standard and contract/SLA templates that explicitly
+      include AI‑specific security clauses: secure SDLC (code review, security testing), vulnerability
+      management obligations, data protection and encryption, incident notification within 24 hours, audit/assessment
+      rights, and compliance with NCA ECC and ISO 42001 (or local equivalents). • Sample signed contracts/SOWs/SLAs
+      for key AI service providers showing these requirements are incorporated. • Third‑party oversight
+      records (e.g., due‑diligence assessments, security questionnaires, penetration/vulnerability reports,
+      audit/attestation reports, and follow‑up actions) demonstrating that vendors are periodically evaluated
+      against these requirements and that issues are tracked and remediated.'
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:18-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 18-1
+    name: Cybersecurity requirements for third-party vendors providing IoT services sha…
+    description: 'Cybersecurity requirements for third-party vendors providing IoT services shall be identified
+      and enforced through contracts and SLAs. Requirements shall include: (1) secure development practices
+      (code review, testing) (2) vulnerability management (3) data protection and encryption (4) incident
+      notification (<24 hours) (5) audit rights; (6) compliance with applicable standards (NCA ECC, ISO
+      42001).
+
+
+      **Implementation guide**
+
+
+      Define a standard set of IoT‑specific cybersecurity clauses covering secure development, vulnerability
+      management, encryption and data protection, <24‑hour incident notification, audit rights, and NCA
+      ECC/ISO 42001 compliance, make their inclusion mandatory in all IoT procurement and contracts, and
+      integrate periodic security assessments and remediation follow‑up into the vendor management lifecycle.
+
+
+      **Verification method**
+
+
+      Review third‑party risk policies and a sample of IoT vendor contracts to confirm that all required
+      cybersecurity clauses are present, enforceable, and not waived without formal risk acceptance. Check
+      recent vendor assessments, reports, and issue trackers to verify that secure development, vulnerability
+      management, data protection, incident notification timeliness, audit cooperation, and standards
+      compliance are actively evaluated and that any gaps have documented remediation plans and deadlines.'
+    typical_evidence: '• Third‑party risk/security standard and IoT contract/SLA templates that explicitly
+      require: secure SDLC (including code review and security testing), formal vulnerability management,
+      strong data protection and encryption, incident notification within 24 hours, audit/assessment rights,
+      and compliance with applicable standards such as NCA ECC and ISO 42001. • Signed contracts/SOWs/SLAs
+      for key IoT providers showing these clauses are included (or stricter), with any deviations formally
+      approved and documented. • Vendor oversight artefacts (e.g., completed security questionnaires,
+      vulnerability/penetration reports, compliance attestations or certificates, and follow‑up action
+      logs) demonstrating ongoing monitoring of vendor adherence to these obligations.'
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:19-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 19-1
+    name: Cybersecurity requirements for cloud-based AI services shall be defined and e…
+    description: 'Cybersecurity requirements for cloud-based AI services shall be defined and enforced
+      through cloud service agreements. Requirements shall address: (1) data location and residency (compliance
+      with local regulations) (2) encryption standards (AES-256, TLS 1.2+) (3) access controls and authentication
+      (4) audit logging and retention (5) disaster recovery and backup (6) SLA for availability and performance.
+
+
+      **Implementation guide**
+
+
+      Define a standard control set for cloud‑based AI services covering data residency, strong encryption,
+      IAM and authentication, logging/retention, DR/backup, and SLAs, require these controls to be built
+      into all new and renewed cloud AI agreements and validated during onboarding, and set up periodic
+      reviews of provider configurations, reports, and SLA metrics to ensure ongoing compliance.
+
+
+      **Verification method**
+
+
+      Review cloud security and procurement policies plus a sample of cloud AI agreements to confirm all
+      six requirement areas are clearly specified, contractually binding, and approved by risk/compliance.
+      Check recent cloud configuration assessments, DR test results, and SLA/availability reports to verify
+      that the provider’s implemented controls and service levels meet the agreed requirements and that
+      any gaps have documented remediation or formal risk acceptance.'
+    typical_evidence: • Cloud and AI security/third‑party standard plus cloud agreement templates that
+      explicitly define requirements for data residency/compliance, encryption at rest (AES‑256) and in
+      transit (TLS 1.2+), access control/authentication, logging and retention, disaster recovery/backup,
+      and minimum SLAs for availability and performance. • Executed cloud service agreements for key AI
+      cloud providers showing these requirements are contractually embedded including documented data‑location
+      commitments, encryption controls, IAM features, logging/retention, DR/backup objectives, and SLA
+      terms.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:20-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 20-1
+    name: Cybersecurity requirements for cloud-based IoT services shall be defined and…
+    description: 'Cybersecurity requirements for cloud-based IoT services shall be defined and enforced
+      through cloud service agreements. Requirements shall address: (1) data location and residency (compliance
+      with local regulations) (2) encryption standards (AES-256, TLS 1.2+) (3) access controls and authentication
+      (4) audit logging and retention (5) disaster recovery and backup (6) SLA for availability and performance.
+
+
+      **Implementation guide**
+
+
+      Define a standard control set for cloud‑based IoT services covering data residency, AES‑256/TLS
+      1.2+ encryption, strong IAM and authentication, audit logging and retention, disaster recovery and
+      backup, and availability/performance SLAs, mandate inclusion of these controls in all cloud IoT
+      agreements and onboarding reviews, and perform periodic checks of provider configurations, reports,
+      and SLA metrics to ensure ongoing compliance.
+
+
+      **Verification method**
+
+
+      Review cloud and vendor‑risk policies plus a sample of cloud IoT contracts to confirm all six requirement
+      areas are clearly specified, contractually binding, and approved by security/risk. Examine recent
+      cloud IoT configuration assessments, DR/backup test records, and SLA/availability reports to verify
+      alignment with the agreed requirements and that any gaps are documented with remediation plans or
+      formal risk acceptance.'
+    typical_evidence: • Cloud/IoT security or third‑party standard and cloud agreement templates that
+      explicitly define requirements for IoT data residency/compliance, encryption at rest (AES‑256) and
+      in transit (TLS 1.2+), access control and authentication, audit logging and retention, disaster
+      recovery/backup, and minimum SLAs for availability and performance. • Executed cloud service agreements
+      and security addenda for key IoT cloud platforms showing these requirements are contractually included,
+      including data‑location commitments, encryption controls, IAM capabilities, logging/retention terms,
+      DR/backup objectives (RPO/RTO), and SLA metrics.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:21-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 21-1
+    name: An AI model risk classification framework shall be established to categorize…
+    description: 'An AI model risk classification framework shall be established to categorize models
+      by risk level (Critical, High, Medium, Low) based on impact and likelihood of harm. Classification
+      criteria shall include: (1) scope of impact (organization-wide vs. department) (2) customer fairness
+      impact (pricing, claims, coverage) (3) data sensitivity (PII, financial, health) (4) model transparency
+      (explainability) (5) regulatory exposure.
+
+
+      **Implementation guide**
+
+
+      Define and approve a standardized AI model risk classification framework that scores models against
+      scope of impact, customer fairness impact, data sensitivity, transparency, and regulatory exposure,
+      maps scores to clear Critical/High/Medium/Low categories, and requires all models in the inventory
+      to be classified and governed according to their assigned risk level.
+
+
+      **Verification method**
+
+
+      Review the classification framework to confirm it includes the four risk levels, the five specified
+      criteria, and clear rules for assigning categories, then sample the model inventory to verify that
+      models are consistently classified with documented justifications and that higher‑risk categories
+      are subject to stronger validation, monitoring, and governance controls.'
+    typical_evidence: • Approved AI model risk classification framework describing risk levels (Critical/High/Medium/Low),
+      the scoring or decision logic. • Model inventory or register showing each in‑scope model’s assigned
+      risk level with recorded rationale against the defined criteria (e.g., enterprise‑wide pricing model
+      with PII and high regulatory exposure marked as Critical/High).
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:21-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 21-2
+    name: Risk tier assignment shall be documented with justification and approved by A…
+    description: 'Risk tier assignment shall be documented with justification and approved by AI Risk
+      Owner. Tier shall be reviewed whenever: (1) model scope changes (2) new use case introduced (3)
+      business impact increases (4) regulatory changes (5) fairness concerns emerge. Tier change requires
+      re-assessment and approval.
+
+
+      **Implementation guide**
+
+
+      Establish a formal AI risk tiering process that requires documenting tier rationale, obtaining AI
+      Risk Owner approval, monitoring for defined triggers (scope or use‑case changes, impact increases,
+      regulatory updates, fairness issues), and performing a structured re‑assessment and re‑approval
+      of the tier whenever these triggers occur before adjusting applicable controls.
+
+
+      **Verification method**
+
+
+      Review AI risk tiering procedures and a sample of model records to confirm that tiers, justifications,
+      and AI Risk Owner approvals are documented and that tier reviews are initiated whenever the specified
+      triggers occur, and check that any tier changes are supported by updated assessments and formal
+      approvals.'
+    typical_evidence: • Approved procedure or standard describing AI risk tiering, documentation of justification,
+      required AI Risk Owner approval, and explicit triggers for tier review (scope change, new use case,
+      higher impact, regulatory change, fairness concerns), including the requirement for re‑assessment
+      and re‑approval when tier changes. • Risk register entries showing each model’s assigned tier, written
+      justification, AI Risk Owner approval, and records of tier reviews and updates linked to one or
+      more of the defined triggers.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:22-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 22-1
+    name: Fairness assessment methodology shall be established and documented. Methodol…
+    description: 'Fairness assessment methodology shall be established and documented. Methodology shall
+      define: (1) fairness metrics (disparate impact, individual fairness, calibration, predictive parity)
+      (2) protected attributes (age, gender, race, ethnicity, national origin, disability, genetic information)
+      (3) fairness testing scope (all models with customer impact) (4) fairness thresholds (e.g., disparate
+      impact ratio ≥0.8) (5) remediation strategies when thresholds not met.
+
+
+      **Implementation guide**
+
+
+      Develop and approve an enterprise fairness assessment methodology that standardizes metrics, protected
+      attributes, thresholds, and remediation actions, embed its application into the model lifecycle
+      (design, pre‑deployment, and periodic review) with clear roles, documentation templates, and escalation
+      when fairness thresholds are breached.
+
+
+      **Verification method**
+
+
+      Review the methodology to confirm it defines metrics, protected attributes, in‑scope models, thresholds,
+      and remediation strategies, then sample customer‑impacting models to verify that formal fairness
+      assessments were performed against the methodology, thresholds checked, and any breaches tracked
+      to closure with documented remediation or risk‑acceptance decisions.'
+    typical_evidence: • Approved, documented AI fairness assessment methodology/standard that defines
+      required metrics • Fairness assessment report for at least one customer‑impacting model showing
+      application of the defined metrics to the listed protected attributes, comparison against thresholds,
+      and documented remediation or risk acceptance where thresholds are not met.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:22-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 22-2
+    name: Fairness testing shall be documented in a Model Fairness Report before produc…
+    description: 'Fairness testing shall be documented in a Model Fairness Report before production deployment.
+      Report shall include: (1) protected attributes tested (2) fairness metrics results; (3) disparate
+      impact findings by group (4) remediation actions taken (5) residual fairness risks and mitigations
+      (6) approval from fairness reviewer and business unit.
+
+
+      **Implementation guide**
+
+
+      Define and enforce a standard AI Model Fairness Report that must be completed for every customer‑impacting
+      model prior to production, capturing tested protected attributes, metric results and disparate impact
+      findings, remediation actions and remaining risks, and formal approvals from an independent fairness
+      reviewer and the accountable business unit.
+
+
+      **Verification method**
+
+
+      Review the approved template/standard to confirm all six required elements are included and mandatory,
+      then sample recent production models to verify that a fully completed and approved Model Fairness
+      Report exists for each and is referenced in deployment approvals.'
+    typical_evidence: • Standard/template for the AI Model Fairness Report that mandates documenting protected
+      attributes tested, fairness metric results, disparate impact by group, remediation actions, residual
+      risks/mitigations, and required approvals (fairness reviewer and business owner). • Completed Model
+      Fairness Report(s) for at least one production (or ready‑for‑prod) model showing all required sections
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:23-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 23-1
+    name: AI models shall be designed, to the extent possible, for explainability and t…
+    description: 'AI models shall be designed, to the extent possible, for explainability and transparency.
+      Explainability requirements shall depend on model risk tier: (1) Critical models: high explainability
+      required (feature importance, decision rules, human-interpretable outputs); (2) High/Medium models:
+      moderate explainability (feature importance at minimum) (3) Low models: explainability optional.
+      Tools: SHAP, LIME, feature importance, decision trees, rule extraction.
+
+
+      **Implementation guide**
+
+
+      Define tier‑based explainability requirements in the AI standards so that Critical models must provide
+      rich, human‑interpretable explanations (e.g., SHAP/LIME analyses, feature importance, decision rules
+      and example outputs), High/Medium models provide at least feature importance or similar global/local
+      explanations, and Low‑risk models have optional explainability, and enforce these requirements through
+      model design reviews and documentation templates.
+
+
+      **Verification method**
+
+
+      Review the explainability standard and a sample of models across different risk tiers to confirm
+      that the required level of explainability and appropriate tools were applied, and check review records
+      to verify that explainability artefacts were examined and approved as part of the model’s governance
+      process.'
+    typical_evidence: • Approved AI explainability standard/methodology that links explainability expectations
+      to risk tiers (Critical/High/Medium/Low) and defines acceptable techniques (e.g., SHAP, LIME, feature
+      importance, decision rules/trees, rule extraction) for each tier. • Model documentation for at least
+      one model in each applicable tier showing how explainability is implemented (e.g., feature importance
+      reports, SHAP/LIME analyses, decision rules or tree visualizations, example human‑interpretable
+      outputs provided to users or reviewers). • Governance or review records (e.g., model risk or design
+      review minutes) evidencing that explainability requirements were assessed against the model’s tier
+      and that explainability artefacts were reviewed and accepted before production use.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:23-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 23-2
+    name: Model Cards shall be created for all Critical and High-tier models before dep…
+    description: 'Model Cards shall be created for all Critical and High-tier models before deployment.
+      Model Card shall document: (1) model description (purpose, inputs, outputs) (2) data description
+      (sources, preprocessing) (3) model performance (accuracy, fairness metrics) (4) limitations and
+      biases (5) intended use and constraints (6) ethical considerations.
+
+
+      **Implementation guide**
+
+
+      Define a standard Model Card template and mandate its completion for all Critical and High‑tier
+      models before deployment, ensuring it captures model and data descriptions, performance and fairness
+      metrics, known limitations/biases, intended use and constraints, and key ethical considerations,
+      and integrate the template into model documentation and deployment approval workflows.
+
+
+      **Verification method**
+
+
+      Review the Model Card standard/template to confirm all required sections are present and mandatory
+      for Critical/High‑tier models, then sample recent deployments to verify that completed and approved
+      Model Cards exist and are referenced in the formal production approval process.'
+    typical_evidence: '• Approved standard/template requiring Model Cards for all Critical and High‑tier
+      models, explicitly listing the six required sections. • Completed Model Card(s) for at least one
+      Critical / High‑tier model, showing: model description, data description, performance (including
+      fairness metrics), limitations/biases, intended use/constraints, and ethical considerations. • Governance
+      or change records showing that an approved Model Card is a pre‑requisite for production deployment
+      of Critical/High‑tier models (e.g., referenced in deployment checklist or committee minutes).'
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:24-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 24-1
+    name: A comprehensive inventory of all IoT devices deployed in the insurance enviro…
+    description: 'A comprehensive inventory of all IoT devices deployed in the insurance environment shall
+      be maintained. Inventory shall include: (1) device identification (serial number, MAC address, IP)
+      (2) device type (telematics, sensor, camera, gateway) (3) location (4) deployment date (5) firmware
+      version (6) security classification (sensitive, standard, low-risk) (7) owner and contact (8) update
+      status.
+
+
+      **Implementation guide**
+
+
+      Define and approve an IoT device security classification scheme based on sensitivity, criticality,
+      and vulnerability risk that assigns each device to Sensitive, Standard, or Low-risk, and tie each
+      class to explicit patching frequencies, monitoring requirements, and network placement rules, enforcing
+      classification at onboarding and periodically reviewing it as device usage or risk changes.
+
+
+      **Verification method**
+
+
+      Review the IoT asset management standard and the live inventory to confirm that all eight data elements
+      are defined as mandatory and are consistently populated for deployed devices. Sample recent IoT
+      deployments, relocations, and firmware updates to verify that corresponding inventory entries were
+      created/updated promptly and that outdated or decommissioned devices are accurately reflected as
+      such.'
+    typical_evidence: • IoT asset management/CMDB standard defining mandatory IoT inventory fields (ID
+      data, type, location, deployment date, firmware, security classification, owner/contact, update
+      status) and maintenance responsibilities. • Export or screenshot from the IoT inventory/CMDB showing
+      a current list of devices with all required attributes populated for representative entries. • Process
+      records (e.g., onboarding/decommissioning workflows, periodic review logs) demonstrating that the
+      inventory is updated when devices are added, changed, or removed and that firmware/update status
+      is regularly reviewed.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:24-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 24-2
+    name: Device security classification shall determine patching, monitoring, and netw…
+    description: 'Device security classification shall determine patching, monitoring, and network placement
+      requirements. Classification criteria: (1) Sensitivity (access to PII/financial data) (2) Criticality
+      (impact if device fails) (3) Vulnerability risk (known CVEs, end-of-life status). Classification:
+      Sensitive (telematics with customer data), Standard (internal sensors), Low-risk (non-networked
+      devices).
+
+
+      **Implementation guide**
+
+
+      Define and approve an IoT device security classification scheme based on sensitivity, criticality,
+      and vulnerability risk that assigns each device to Sensitive, Standard, or Low-risk, and tie each
+      class to explicit patching frequencies, monitoring requirements, and network placement rules, enforcing
+      classification at onboarding and periodically reviewing it as device usage or risk changes.
+
+
+      **Verification method**
+
+
+      Review the IoT classification standard and a sample of inventory records to confirm that devices
+      are classified using the defined criteria with documented justification and that Sensitive, Standard,
+      and Low-risk labels are applied consistently, then check patching, monitoring, and network configurations
+      to verify they align with the requirements associated with each classification.'
+    typical_evidence: • Approved IoT security classification standard defining the three criteria (sensitivity,
+      criticality, vulnerability risk), the three classes (Sensitive, Standard, Low-risk with examples),
+      and the corresponding minimum requirements for patching cadence, monitoring depth, and network placement/segmentation
+      per class. • IoT inventory or CMDB extract showing each device’s assigned security classification
+      with rationale (e.g., telematics devices marked Sensitive, internal environmental sensors as Standard,
+      non-networked devices as Low-risk) and linked patching/monitoring/network profiles.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:25-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 25-1
+    name: A patching and firmware update process shall be established for all IoT devic…
+    description: 'A patching and firmware update process shall be established for all IoT devices. Process
+      shall define: (1) patch classification (critical, high, medium, low); (2) update timelines by classification;
+      (3) testing before deployment (pre-production validation) (4) rollback procedures in case of failures
+      (5) compliance tracking and reporting.
+
+
+      **Implementation guide**
+
+
+      Establish a formal IoT patch and firmware process that classifies vulnerabilities by severity, sets
+      clear deployment timelines per class, requires pre‑production testing and defined rollback steps
+      for each update, and maintains centralized tracking and reporting of patch status and exceptions
+      across all IoT devices.
+
+
+      **Verification method**
+
+
+      Review the IoT patch management procedure and sample patch records to confirm that classification,
+      timelines, testing, and rollback steps are consistently applied, and examine compliance reports
+      to verify that patch coverage is monitored, overdue patches are highlighted, and remediation or
+      risk acceptance is documented.'
+    typical_evidence: • Documented IoT patch and firmware management procedure / process (could be included
+      within the patch management policy) defining patch severity levels (critical, high, medium, low),
+      target deployment timelines for each, pre‑production testing requirements, rollback steps, and compliance
+      tracking and reporting responsibilities. • Patching records for a sample of IoT devices (e.g., telematics,
+      sensors, gateways) • Compliance or status reports (e.g., dashboards, management reports) showing
+      patch coverage.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:25-2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 25-2
+    name: Critical and high-priority patches shall be deployed within defined timelines…
+    description: 'Critical and high-priority patches shall be deployed within defined timelines: Critical
+      within 7 days, High within 14 days. Compliance shall be tracked and reported monthly. Devices unable
+      to meet timelines due to technical constraints shall be documented and mitigated (network isolation,
+      enhanced monitoring, replacement planning).
+
+
+      **Implementation guide**
+
+
+      Define and enforce IoT patch SLAs that require Critical patches to be deployed within 7 days and
+      High within 14 days, supported by centralized tracking and monthly reporting, and mandate that any
+      devices unable to meet these timelines are formally recorded with approved mitigations (e.g., network
+      isolation, increased monitoring, or planned replacement) until full remediation is achieved.
+
+
+      **Verification method**
+
+
+      Review the IoT patching policy and recent monthly reports to confirm the 7/14‑day timelines are
+      defined, measured, and reported, and sample exceptions to verify that non-compliant devices have
+      documented reasons, compensating controls in place, and agreed remediation or replacement plans
+      with target dates.'
+    typical_evidence: • IoT patch management standard or procedure • Monthly IoT patch compliance reports
+      or dashboards showing adherence to the 7/14‑day timelines by device/type, including lists of overdue
+      patches and devices under compensating controls. • Exception and mitigation records documenting
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:26-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 26-1
+    name: Vulnerability assessments shall be conducted on IoT devices at planned interv…
+    description: 'Vulnerability assessments shall be conducted on IoT devices at planned intervals. Assessment
+      frequency: Sensitive devices (telematics): quarterly minimum; Standard devices: semi-annually; Low-risk:
+      annually. Assessment shall identify: (1) known CVEs (NVD database matching) (2) weak authentication/encryption
+      (3) unnecessary services/ports (4) outdated firmware (5) supply chain risks.
+
+
+      **Implementation guide**
+
+
+      Establish a formal IoT vulnerability assessment program that schedules scans and security reviews
+      for Sensitive, Standard, and Low‑risk devices at the defined frequencies, uses tools and processes
+      to detect CVEs, weak authentication/encryption, unnecessary services/ports, outdated firmware, and
+      supply chain issues, and feeds all findings into a centralized vulnerability register with defined
+      owners, remediation timelines, and verification of fixes.
+
+
+      **Verification method**
+
+
+      Review the IoT vulnerability assessment procedure and a sample of recent assessment reports across
+      device classes to confirm that required frequencies and all five assessment dimensions are covered.
+      Check the vulnerability register and associated tickets to verify that IoT findings are tracked
+      with severity, that remediation or compensating controls are implemented within policy timeframes,
+      and that follow‑up assessments confirm closure.'
+    typical_evidence: • Documented IoT vulnerability assessment procedure defining device classes and
+      scope of checks • Sample IoT vulnerability assessment reports for each classification tier • Tracking/remediation
+      records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:27-1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-emerging-tech:root
+    ref_id: 27-1
+    name: When IoT devices are retired, decommissioned, or replaced, data shall be secu…
+    description: 'When IoT devices are retired, decommissioned, or replaced, data shall be securely erased
+      and credentials revoked. Decommissioning process shall include: (1) data wipe (factory reset or
+      secure erase per NIST SP 800-88) (2) credential revocation (API keys, certificates, passwords) (3)
+      inventory removal; (4) physical destruction/resale (if applicable, per data classification) (5)
+      documentation of decommissioning date and method.
+
+
+      **Implementation guide**
+
+
+      Implement a standardized IoT decommissioning workflow that, for every retired or replaced device,
+      enforces secure data wiping, revokes all associated credentials and access, updates and removes
+      the device from the inventory, applies appropriate physical destruction or controlled resale based
+      on security classification, and records the decommissioning date, method, and approvals in a central
+      log.
+
+
+      **Verification method**
+
+
+      Review the decommissioning procedure and a sample of recent IoT decommissioning cases to confirm
+      all five required steps were followed, and compare inventory/CMDB data against decommissioning logs
+      to verify that retired devices are no longer active, credentials are revoked, and destruction/resale
+      actions and dates are properly documented.'
+    typical_evidence: • Approved IoT decommissioning procedure describing mandatory secure data wipe,
+      revocation of all device identities/credentials, inventory/CMDB update, physical destruction or
+      controlled resale per classification, and documentation of decommissioning details. • Sample decommissioning
+      records for IoT devices • Credential revocation records

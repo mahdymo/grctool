@@ -1,0 +1,42 @@
+# Secrets & environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.secrets/
+
+# Customer data — never commit (spec §6.3, PDPL)
+migration/source-data/
+migration/staging/
+*.xlsm
+*.xlsx
+!migration/samples/*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Build & runtime artifacts
+dist/
+build/
+*.log
+data/
+backups/
+.tmp/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

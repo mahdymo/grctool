@@ -1,0 +1,193 @@
+name: grctool
+
+# Dev stack — single customer instance ("customer1") + control plane.
+# Prod uses overrides (compose.prod.yml): TLS, no published DB ports, replicas.
+# Spec §2.1 architecture. CISO Assistant images pinned by digest (v4.3.4).
+
+services:
+  caddy:
+    image: caddy:2.11.4
+    container_name: grc-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - frontend
+      - keycloak
+      - control-plane
+
+  # ---------- Customer instance: customer1 ----------
+  backend:
+    image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:185bcdcc0251a08e5d9de7f49d2c4964980eff0fac4ecb38a217f6146d03b96d
+    container_name: grc-backend-customer1
+    restart: always
+    environment:
+      - ALLOWED_HOSTS=backend,localhost,app.grc.localhost
+      - CISO_ASSISTANT_URL=http://app.grc.localhost
+      - DJANGO_DEBUG=False
+      - AUTH_TOKEN_TTL=7200
+      - POSTGRES_NAME=ciso_customer1
+      - POSTGRES_USER=ciso
+      - POSTGRES_PASSWORD=${CISO_DB_PASSWORD}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - HOME=/tmp
+      - XDG_CACHE_HOME=/tmp/.cache
+      - XDG_CONFIG_HOME=/tmp/.config
+      - XDG_DATA_HOME=/tmp/.local/share
+    volumes:
+      - ciso_evidence_customer1:/code/db
+    user: "1001:1001"
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://backend:8000/api/health/', timeout=5)"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 150s
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  huey:
+    image: ghcr.io/intuitem/ciso-assistant-community/backend@sha256:185bcdcc0251a08e5d9de7f49d2c4964980eff0fac4ecb38a217f6146d03b96d
+    container_name: grc-huey-customer1
+    restart: always
+    environment:
+      - ALLOWED_HOSTS=backend,localhost,app.grc.localhost
+      - CISO_ASSISTANT_URL=http://app.grc.localhost
+      - DJANGO_DEBUG=False
+      - POSTGRES_NAME=ciso_customer1
+      - POSTGRES_USER=ciso
+      - POSTGRES_PASSWORD=${CISO_DB_PASSWORD}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - HOME=/tmp
+      - XDG_CACHE_HOME=/tmp/.cache
+      - XDG_CONFIG_HOME=/tmp/.config
+      - XDG_DATA_HOME=/tmp/.local/share
+    volumes:
+      - ciso_evidence_customer1:/code/db
+    entrypoint:
+      - /bin/sh
+      - -c
+      - python manage.py run_huey -w 2 --scheduler-interval 60
+    user: "1001:1001"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  frontend:
+    image: ghcr.io/intuitem/ciso-assistant-community/frontend@sha256:41c46e732cb84b2fd9f62d2b1ac4eba171ae79dd81185b2f13cf9294ef3249c5
+    container_name: grc-frontend-customer1
+    restart: always
+    environment:
+      - PUBLIC_BACKEND_API_URL=http://backend:8000/api
+      - PUBLIC_BACKEND_API_EXPOSED_URL=http://app.grc.localhost/api
+      - PROTOCOL_HEADER=x-forwarded-proto
+      - HOST_HEADER=x-forwarded-host
+      - ADDRESS_HEADER=x-forwarded-for
+      - XFF_DEPTH=1
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  # ---------- Shared infrastructure ----------
+  postgres:
+    image: postgres:17.7
+    container_name: grc-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_ADMIN_PASSWORD}
+      # consumed by init-db.sh on first boot only
+      - CISO_DB_PASSWORD=${CISO_DB_PASSWORD}
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
+      - CP_DB_PASSWORD=${CP_DB_PASSWORD}
+      - EW_DB_PASSWORD=${EW_DB_PASSWORD}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # No published port — internal network only (spec §6.2)
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.2
+    container_name: grc-keycloak
+    restart: unless-stopped
+    command: ["start-dev", "--import-realm"]
+    environment:
+      - KC_BOOTSTRAP_ADMIN_USERNAME=${KC_ADMIN_USER}
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=${KC_ADMIN_PASSWORD}
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
+      - KC_DB_USERNAME=keycloak
+      - KC_DB_PASSWORD=${KC_DB_PASSWORD}
+      - KC_HOSTNAME=auth.grc.localhost
+      - KC_HOSTNAME_STRICT=false
+      - KC_PROXY_HEADERS=xforwarded
+      - KC_HTTP_ENABLED=true
+    volumes:
+      - ../keycloak/realms:/opt/keycloak/data/import:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  redis:
+    image: valkey/valkey:8.1.5
+    container_name: grc-redis
+    restart: unless-stopped
+    command: ["valkey-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ---------- Custom sidecars ----------
+  control-plane:
+    build: ../control-plane
+    container_name: grc-control-plane
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://controlplane:${CP_DB_PASSWORD}@postgres:5432/controlplane
+      - REDIS_URL=redis://redis:6379/0
+      - INTERNAL_API_TOKEN=${CONTROL_PLANE_TOKEN}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  email-worker:
+    build: ../email-worker
+    container_name: grc-email-worker
+    restart: unless-stopped
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_WEBHOOK_SECRET=${RESEND_WEBHOOK_SECRET}
+      - EMAIL_FROM_DEFAULT=${EMAIL_FROM_DEFAULT}
+      - DATABASE_URL=postgresql://emailworker:${EW_DB_PASSWORD}@postgres:5432/emailworker
+    ports:
+      - "127.0.0.1:8081:8081" # webhook receiver (fronted by Caddy in prod)
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pg_data:
+  redis_data:
+  caddy_data:
+  ciso_evidence_customer1:

@@ -1,0 +1,79 @@
+{
+  "realm": "ehsanlab-internal",
+  "enabled": true,
+  "displayName": "EhsanLab (internal)",
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "accessTokenLifespan": 900,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 28800,
+  "offlineSessionIdleTimeout": 2592000,
+  "accessCodeLifespan": 86400,
+  "actionTokenGeneratedByAdminLifespan": 86400,
+  "bruteForceProtected": true,
+  "failureFactor": 5,
+  "waitIncrementSeconds": 60,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "permanentLockout": false,
+  "roles": {
+    "realm": [
+      { "name": "ehsanlab-admin", "description": "EhsanLab Admin — control plane + all instances (spec 5.2)" },
+      { "name": "ehsanlab-consultant", "description": "EhsanLab Consultant — assigned customers" }
+    ]
+  },
+  "groups": [
+    { "name": "ehsanlab-admins", "realmRoles": ["ehsanlab-admin"] },
+    { "name": "ehsanlab-consultants", "realmRoles": ["ehsanlab-consultant"] }
+  ],
+  "requiredActions": [
+    {
+      "alias": "CONFIGURE_TOTP",
+      "name": "Configure OTP",
+      "providerId": "CONFIGURE_TOTP",
+      "enabled": true,
+      "defaultAction": true
+    }
+  ],
+  "authenticationFlows": [],
+  "clients": [
+    {
+      "clientId": "grc-control-plane",
+      "name": "GRC Control Plane",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "+"
+      },
+      "redirectUris": ["http://ops.grc.localhost/*"],
+      "webOrigins": ["http://ops.grc.localhost"],
+      "defaultClientScopes": ["openid", "profile", "email", "roles"]
+    },
+    {
+      "clientId": "ciso-assistant-customer1",
+      "name": "CISO Assistant — customer1",
+      "enabled": true,
+      "protocol": "saml",
+      "attributes": {
+        "saml.signature.algorithm": "RSA_SHA256",
+        "saml.force.post.binding": "true",
+        "saml.client.signature": "false",
+        "saml_name_id_format": "email"
+      },
+      "redirectUris": ["http://app.grc.localhost/*"]
+    }
+  ],
+  "passwordPolicy": "length(12) and notUsername and notEmail",
+  "internationalizationEnabled": true,
+  "supportedLocales": ["en", "ar"],
+  "defaultLocale": "en"
+}

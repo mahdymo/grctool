@@ -1,0 +1,8 @@
+Hello {{ recipient_name }},
+
+Reminder: the {{ cycle }} IA SAT self-assessment for {{ customer_name }} is due on {{ due_date }} ({{ days_remaining }} days remaining).
+
+Open the assessment:
+{{ assessment_url }}
+
+This is an automated message. Do not reply.

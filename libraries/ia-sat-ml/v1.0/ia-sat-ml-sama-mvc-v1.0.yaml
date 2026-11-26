@@ -1,0 +1,486 @@
+convert_library_version: v2
+urn: urn:intuitem:risk:library:ia-sat-ml-sama-mvc
+locale: en
+ref_id: SAMA MVC (IA SAT M&L)
+name: IA SAT — SAMA Minimum Viable Controls
+description: Insurance Authority Self-Assessment Tool (Medium & Low risk entities) — IA SAT — SAMA Minimum
+  Viable Controls. Converted verbatim from the IA SAT workbook by the grctool converter; do not edit by
+  hand.
+version: '1.0'
+provider: Insurance Authority (KSA)
+packager: EhsanLab
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:ia-sat-ml-sama-mvc
+    ref_id: SAMA MVC
+    name: IA SAT — SAMA Minimum Viable Controls
+  requirement_nodes:
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    assessable: false
+    depth: 1
+    ref_id: SAMA MVC
+    name: IA SAT — SAMA Minimum Viable Controls
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.16
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.16'
+    name: Member Organizations should reflect all controls within this document within…
+    description: 'Member Organizations should reflect all controls within this document within their board
+      approved internal policies in their respective organizations, and should have a process in place
+      for periodic review of the polices.
+
+
+      **Implementation guide**
+
+
+      Incorporate all relevant applicable MVC requirements into the cyber/IT/security, fraud, and digital‑channel
+      policies and obtain board approval. Maintain a control‑to‑policy mapping and review policies on
+      a defined cycle (e.g., annually or upon regulatory change), documenting updates and approvals.
+
+
+      **Verification method**
+
+
+      Check board‑approved policies to confirm MVC topics are covered. Review the MVC–policy mapping and
+      recent review minutes/approvals. Ensure next review dates are defined and aligned with the documented
+      review process.'
+    typical_evidence: • Board‑approved policy (or set of policies) referencing/covering all applicable
+      SAMA MVC controls. • Policy mapping to control requirements • Documented policy review process with
+      defined frequency and recent review/approval records.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.15
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.15'
+    name: Member Organization should ensure the content of the SMS messages is clear, d…
+    description: 'Member Organization should ensure the content of the SMS messages is clear, direct,
+      stating the purpose for the SMS and the name of the Member Organization
+
+
+      **Implementation guide**
+
+
+      Develop standardized SMS templates that clearly include: Organization name/brand, Purpose of the
+      message (OTP, notification, alert), Relevant action or information, Warning against sharing OTPs
+      (where applicable). Use registered Sender ID for brand recognition. Avoid ambiguous or generic messaging.
+
+
+      **Verification method**
+
+
+      Review all SMS templates, verify organization identification, test message clarity'
+    typical_evidence: • SMS template library • Template review/approval records • Sample SMS messages
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.6
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.6'
+    name: Member Organization should conduct awareness program to all users on regular…
+    description: 'Member Organization should conduct awareness program to all users on regular basis that
+      should cover Terms & Conditions and general security awareness such as sharing confidential information
+      (password or OTP).
+
+
+      **Implementation guide**
+
+
+      Implement regular user awareness communications via: in-app notifications, email campaigns, SMS
+      alerts, and app update notes. Cover topics including: T&C updates, password protection, never sharing
+      OTPs, recognizing phishing, and reporting suspicious activity. Track user acknowledgment of critical
+      communications.
+
+
+      **Verification method**
+
+
+      Review awareness materials, verify delivery mechanisms, check communication frequency'
+    typical_evidence: • User awareness program documentation • In-app security tips/notifications • Terms
+      & Conditions communication • Security awareness content (password/OTP protection)
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.2'
+    name: Member Organization should establish a secure process to validate users.
+    description: 'Member Organization should establish a secure process to validate users.
+
+
+      **Implementation guide**
+
+
+      Establish multi-step user validation process including identity document verification, phone number
+      ownership verification (via Tahaqaq), and biometric verification where applicable. Document all
+      validation steps with security controls at each stage.
+
+
+      **Verification method**
+
+
+      Review policies, procedures, and system designs to confirm that a secure, risk‑based user validation
+      process is defined, approved, and aligned with regulatory obligations. Test a sample of onboarding
+      and critical transaction cases from different channels to verify that the defined validation steps
+      were actually applied, including any step‑up checks.'
+    typical_evidence: • Documented user validation/identity verification process / procedure • Evidence
+      that the process is implemented in systems and channels (e.g., workflow diagrams, screenshots of
+      onboarding and step‑up authentication screens
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.8
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.8'
+    name: Multi Factor Authentication (MFA) should be implemented to authenticate each…
+    description: 'Multi Factor Authentication (MFA) should be implemented to authenticate each log in.
+
+
+      **Implementation guide**
+
+
+      Implement MFA for all login attempts using at least two factors: something you know (password/PIN),
+      something you have (OTP to registered phone), or something you are (biometric). Configure MFA as
+      mandatory with no bypass options for standard users.
+
+
+      **Verification method**
+
+
+      Test MFA enforcement, verify all login paths require MFA, review authentication logs'
+    typical_evidence: • MFA implementation documentation • Authentication flow diagrams • MFA method configuration
+      (OTP/biometric/etc.) • Login attempt logs with MFA verification
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.5
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.5'
+    name: Member Organization should ensure the registration process includes one-time-…
+    description: 'Member Organization should ensure the registration process includes one-time-password
+      mechanism (OTP) as a form of verification. The (OTP) must be send to a verified phone number as
+      per point (3.4).
+
+
+      **Implementation guide**
+
+
+      Implement OTP as a mandatory verification factor in registration, account reactivation, and device
+      re‑registration flows, ensuring that OTPs are generated securely, short‑lived, single use, and bound
+      to the specific user/session. Configure systems so OTPs can only be sent to the mobile number that
+      has been verified via the trusted ownership‑verification process, and enforce rate limiting, retry
+      limits, and lockout for repeated failures. Ensure deactivation/reactivation and device re‑registration
+      processes are clearly defined, logged, and subject to additional checks (e.g., knowledge‑based or
+      biometric factors) where risk is higher.
+
+
+      **Verification method**
+
+
+      Review policies, procedures, and UX/technical designs to confirm that OTP to a verified mobile number
+      is required for registration, account reactivation, and device re‑registration, and that deactivation/reactivation
+      processes are clearly documented and secured. Perform end‑to‑end tests of each journey to verify
+      that OTPs are only delivered to the verified number, that invalid/expired OTPs are rejected, and
+      that excessive failures trigger protective measures. Examine OTP and lifecycle‑event logs for a
+      sample period to confirm consistent application of the controls and identify any anomalies or bypasses.'
+    typical_evidence: •Documented procedures/standards for registration, account deactivation/reactivation,
+      and device re‑registration showing that OTP is used as a verification step and is sent only to a
+      previously verified mobile number. • System design/configuration (e.g., user‑journey flows, diagrams,
+      BRDs) describing how OTP is integrated into registration, deactivation, reactivation, and device
+      re‑registration, including controls such as OTP expiry, retry limits, and linkage to the verified
+      number. • Sample logs or test/production records demonstrating OTP use in each relevant journey
+      (registration, deactivation, reactivation, device re‑registration), with OTPs sent to the verified
+      number and failures handled per the procedure.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.1
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.1'
+    name: Member Organization should ensure registration for each phone number (or) Nat…
+    description: 'Member Organization should ensure registration for each phone number (or) National ID/Iqama,
+      is linked to one application only
+
+
+      **Implementation guide**
+
+
+      Implement a unique binding in back‑end systems so that one verified phone number or National ID/Iqama
+      can be associated with only one active application account, with clear business rules for rare,
+      controlled exceptions. Build validation into registration and re‑registration flows (API and UI)
+      to check for existing accounts and reject or route to manual review when the same identifier is
+      already in use. Maintain monitoring or periodic checks for duplicates to detect legacy or abnormal
+      cases and remediate them through a documented process.
+
+
+      **Verification method**
+
+
+      Review the documented registration/onboarding process and system requirements to confirm that “one
+      phone number/ID per application” is explicitly mandated. Inspect application/database configuration
+      or logic (e.g., uniqueness constraints, registration code) and test sample registrations to verify
+      that a second account using the same phone number or National ID/Iqama is blocked or routed to controlled
+      handling. Obtain or generate a sample user data extract to check for duplicates and confirm that
+      any historical exceptions are justified and tracked.'
+    typical_evidence: • Documented registration/onboarding procedure stating that each phone number or
+      National ID/Iqama can be registered to a single application account only • System design or configuration
+      evidence showing how uniqueness is enforced (e.g., database constraints, API validation logic, error
+      messages/screens preventing multiple registrations with same phone/ID). • Sample reports or screenshots
+      from production (e.g., user table extract, monitoring report) demonstrating that duplicate registrations
+      per phone number or National ID/Iqama are prevented or flagged and handled.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.4
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.4'
+    name: Member Organization should verify that the ownership of the phone number is r…
+    description: 'Member Organization should verify that the ownership of the phone number is registered
+      to the same user (i.e. match name & national ID) through trusted party only (i.e. Tahaqaq).
+
+
+      **Implementation guide**
+
+
+      Integrate with Tahaqaq (or equivalent trusted party) API to verify phone number ownership matches
+      the user’s name and National ID. Implement real-time verification during registration and store
+      verification results. Reject registration if ownership cannot be verified.
+
+
+      **Verification method**
+
+
+      Test Tahaqaq integration, verify matching logic, review verification logs'
+    typical_evidence: •Documented procedure/standard stating that mobile number ownership must be verified
+      against the customer’s name and national ID via a trusted external source •Tahaqaq integration documentation
+      • API integration evidence • Phone ownership verification logs • Name and National ID matching records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.6
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.6'
+    name: Member organizations should implement session timeout controls for all issued…
+    description: 'Member organizations should implement session timeout controls for all issued (OTP)s.
+
+
+      **Implementation guide**
+
+
+      Configure OTPs to be short‑lived (e.g., a few minutes), single‑use, and bound to a specific session/transaction.
+      Enforce automatic invalidation after timeout or successful use, with limits on retries and rate‑limiting
+      to prevent brute‑force. Ensure changes to OTP timeout parameters follow change management and are
+      documented.
+
+
+      **Verification method**
+
+
+      Review documentation and system settings to confirm defined OTP timeout and retry limits. Perform
+      tests attempting to use an OTP after expiry or after successful use to verify rejection. Check sample
+      OTP logs to confirm time‑based invalidation and absence of unusually long‑lived OTPs.'
+    typical_evidence: • Standard/procedure specifying maximum OTP validity time and number of attempts.
+      • System configuration or technical document showing OTP expiry/timeout settings. • Sample logs
+      or test results showing expired OTPs are rejected.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.7
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.7'
+    name: SMS notification should be sent to the users for registration, device re-regi…
+    description: 'SMS notification should be sent to the users for registration, device re-registration
+      or change in the status of account such as deactivation, reactivation and inactive.
+
+
+      **Implementation guide**
+
+
+      Implement automated SMS notifications for: new registration confirmation, device re-registration
+      alerts, account deactivation notices, account reactivation confirmation, and account inactivity
+      warnings. Use clear, branded messaging identifying the organization and action taken.
+
+
+      **Verification method**
+
+
+      Verify notification triggers, review SMS templates, test delivery for each event type'
+    typical_evidence: • Notification standard stating SMS is required for registration, device re-registration,
+      and account status changes (deactivation, reactivation, inactive). • System/configuration document
+      showing SMS triggers for these events. • Sample SMS logs or screenshots for registration, device
+      re-registration, and each account status change.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.8
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.8'
+    name: Member Organization application should be assigned to one-device only. Otherw…
+    description: 'Member Organization application should be assigned to one-device only. Otherwise, an
+      (OTP) should be implemented for each login, as well as disabling concurrent login.
+
+
+      **Implementation guide**
+
+
+      Implement device fingerprinting/binding to associate account with single device. If multi-device
+      access is permitted, require OTP for every login attempt and prevent concurrent active sessions.
+      Automatically terminate existing sessions when new login occurs on different device.
+
+
+      **Verification method**
+
+
+      Test device binding, verify OTP requirement for new devices, test concurrent session blocking'
+    typical_evidence: • Documented standard describing one‑device binding or, if multiple devices allowed,
+      mandatory OTP per login and disabled concurrent sessions. • System/configuration document showing
+      device binding, concurrent‑session settings, and OTP‑on‑login configuration. • Sample logs/screenshots
+      showing device registration, blocked concurrent logins, and OTP at login where multiple devices
+      exist.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:3.9
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '3.9'
+    name: Member Organization should develop effective and secure process for account d…
+    description: 'Member Organization should develop effective and secure process for account deactivation,
+      reactivation and device re-registration to authenticate the user.
+
+
+      **Implementation guide**
+
+
+      Develop secure processes for: Account deactivation (user-initiated and admin-initiated with verification),
+      Account reactivation (requiring identity re-verification and OTP), Device re-registration (requiring
+      full authentication including Tahaqaq verification). Document approval workflows and audit trails.
+
+
+      **Verification method**
+
+
+      Review lifecycle procedures, test authentication requirements for each process'
+    typical_evidence: • Account lifecycle management procedures • Deactivation process documentation •
+      Reactivation authentication requirements • Device re-registration workflow
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.7
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.7'
+    name: Member Organization should develop inactive accounts policy.
+    description: 'Member Organization should develop inactive accounts policy.
+
+
+      **Implementation guide**
+
+
+      Define clear inactivity thresholds (e.g., no login/activity for X days) and corresponding actions
+      (notify, restrict, then deactivate), aligned with regulatory/data‑retention requirements. Implement
+      automated detection and status changes in customer‑facing systems, with appropriate alerts to users.
+      Ensure reactivation requires strong authentication.
+
+
+      **Verification method**
+
+
+      Review the inactive‑accounts policy and system settings to confirm thresholds and actions are defined.
+      Check a sample of accounts that became inactive to verify timing and actions match the policy. Test
+      reactivation of an inactive account to confirm secure authentication is enforced.'
+    typical_evidence: • Inactive account policy document including Inactivity threshold definition • System/configuration
+      document describing how inactivity rules are implemented in portals/mobile apps. •Sample accounts
+      report or logs showing accounts moved to inactive/locked status according to the policy.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.9
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.9'
+    name: One-time-password mechanism (OTP) should be implemented for Password Rests
+    description: 'One-time-password mechanism (OTP) should be implemented for Password Rests
+
+
+      **Implementation guide**
+
+
+      Require OTP to a verified channel (e.g., registered mobile) for any password reset, with short OTP
+      validity and limited attempts. Bind OTP to the specific reset request and user, then force rejection
+      after use or expiry.
+
+
+      **Verification method**
+
+
+      Review policy and reset flow to confirm OTP is mandatory. Test password reset end‑to‑end to verify
+      OTP is required and enforced. Check sample reset logs to ensure OTP validation occurs before password
+      change.'
+    typical_evidence: • Approved authentication/identity management standard requiring OTP for password
+      reset. • System/flow design showing OTP step in the password reset process. • Sample logs or screenshots
+      evidencing OTP use during password reset.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.3
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.3'
+    name: Member Organization should develop installation restriction mechanism for pri…
+    description: 'Member Organization should develop installation restriction mechanism for privilege
+      escalation devices such as “Jailbreak” for iOS and “Root” for Android or any open source operating
+      system, taking into consideration that the application is installed through official stores
+
+
+      **Implementation guide**
+
+
+      Implement jailbreak/root detection in the insurance mobile app and block installation/use on such
+      devices, or run in a highly restricted mode with clear warnings. Ensure the app is only distributed
+      via official stores and update detection logic as platforms evolve.
+
+
+      **Verification method**
+
+
+      Review standards and technical design to confirm jailbreak/root restrictions are defined. Test the
+      app on jailbroken/rooted devices (or lab‑simulated) to verify it detects the condition and enforces
+      the restriction. Check logs or monitoring for recorded blocked/tampered‑device attempts.'
+    typical_evidence: • Mobile app security/installation standard requiring blocking or restricting use
+      on jailbroken/rooted or otherwise tampered devices. • Technical design or configuration document
+      showing jailbreak/root detection and enforcement (block or restricted mode). • Test results or screenshots/logs
+      showing the app detecting a jailbroken/rooted device and preventing normal use.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.4
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.4'
+    name: organizations should have contingency measures in case of disaster and ensure…
+    description: 'organizations should have contingency measures in case of disaster and ensure effective
+      back-up and recovery procedures.
+
+
+      **Implementation guide**
+
+
+      Develop and maintain BCP and DRP covering application infrastructure, user data, and transaction
+      records. Implement automated backups with offsite/cloud replication. Define and test RTO/RPO targets.
+      Conduct annual DR testing with documented results.
+
+
+      **Verification method**
+
+
+      Review BCP/DRP documentation, verify backup completion, review DR test results'
+    typical_evidence: • Business Continuity Plan (BCP) • Disaster Recovery Plan (DRP) • Backup procedures
+      and schedules • Recovery testing results • RTO/RPO documentation
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:4.2
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-sama-mvc:root
+    ref_id: '4.2'
+    name: Organizations should use official application stores
+    description: 'Organizations should use official application stores
+
+
+      **Implementation guide**
+
+
+      Publish applications exclusively through Apple App Store and Google Play Store ensuring that this
+      officially documented and implemented. Do not provide APK/IPA files for direct download or side-loading.
+      Include store verification in user communications and warn against installing from unofficial sources.
+
+
+      **Verification method**
+
+
+      Review policies and app‑lifecycle documents to confirm the “official stores only” requirement. Check
+      live production apps to ensure they exist only on official stores and are not offered via public
+      unofficial channels'
+    typical_evidence: • Policy/standard stating that customer mobile apps are distributed only via official
+      stores (Apple App Store, Google Play, etc.). • Evidence of listing in official stores (store links/screenshots
+      or release records).

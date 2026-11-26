@@ -1,0 +1,1232 @@
+convert_library_version: v2
+urn: urn:intuitem:risk:library:ia-sat-ml-it-resilience
+locale: en
+ref_id: IA IT Resilience (IA SAT M&L)
+name: IA SAT — IT Resilience
+description: Insurance Authority Self-Assessment Tool (Medium & Low risk entities) — IA SAT — IT Resilience.
+  Converted verbatim from the IA SAT workbook by the grctool converter; do not edit by hand.
+version: '1.0'
+provider: Insurance Authority (KSA)
+packager: EhsanLab
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:ia-sat-ml-it-resilience
+    ref_id: IA IT Resilience
+    name: IA SAT — IT Resilience
+  requirement_nodes:
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    assessable: false
+    depth: 1
+    ref_id: IA IT Resilience
+    name: IA SAT — IT Resilience
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---3
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 3
+    name: Ensure that disaster recovery plans and processes are fully integrated and al…
+    description: 'Ensure that disaster recovery plans and processes are fully integrated and aligned with
+      the organization''s business continuity plans, crisis management framework, and governance structures
+      to ensure consistent invocation criteria, escalation procedures, and coordinated response mechanisms.
+
+
+      **Implementation guide**
+
+
+      Establish a single resilience governance model where BCM, crisis management, and IT DR share common
+      invocation criteria, escalation levels, and communication protocols, then update all related plans
+      so IT DR steps, RTO/RPOs, and incident handling are directly linked to business impact tiers and
+      crisis levels defined in BCM and crisis frameworks, and validate this through regular integrated
+      simulations
+
+
+      **Verification method**
+
+
+      1. Review alignment documentation for completeness. 2. Test invocation criteria consistency across
+      DR and BCP and verify escalation procedures are coordinated.'
+    typical_evidence: • DR-BCP alignment documentation • Unified invocation criteria (covering BCM, crisis,
+      and IT DR) • Escalation procedure matrix • Crisis management integration • Governance structure
+      mapping
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---4
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 4
+    name: Periodically review governance structures, policies and procedures to ensure…
+    description: 'Periodically review governance structures, policies and procedures to ensure continued
+      alignment with organizational strategy, regulatory requirements, emerging threats and industry best
+      practices. Reviews shall be documented, approved by senior management, and integrated into organizational
+      governance frameworks.
+
+
+      **Implementation guide**
+
+
+      1. Establish periodic (annually) governance review cycle or upon changes covering: Alignment with
+      organizational strategy changes, Regulatory compliance updates (NCA, Insurance Authority), Emerging
+      threat assessment, Industry best practice benchmarking (ISO 22301, DRII). 2. Document all reviews
+      with findings, recommendations, and senior management approval. 3. Integrate updates into organizational
+      governance frameworks policies and procedures
+
+
+      **Verification method**
+
+
+      1. Verify review completion against schedule. 2. Check approval records and assess whether updates
+      are reflected in governance frameworks and operational procedures.'
+    typical_evidence: • Documented review schedule and methodology for governance structures, policies,
+      and procedures. • Senior management / board approval • Regulatory change / update tracking • Samples
+      of completed review records/reports
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---5
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 5
+    name: Ensure that business continuity and disaster recovery plans, policies, and pr…
+    description: 'Ensure that business continuity and disaster recovery plans, policies, and procedures
+      are formally approved by authorized senior management personnel and communicated to all relevant
+      internal stakeholders, external partners, and supporting organizations.
+
+
+      **Implementation guide**
+
+
+      1. Implement formal approval workflow for all BC/DR documents: Designated approval authority (CEO,
+      COO, or delegated senior executive), Version control with approval signatures/dates, Communication
+      plan for internal stakeholders (all employees with BC roles), External partner notification (critical
+      vendors, service providers), Supporting organization briefings. 2. Track acknowledgment of receipt.
+
+
+      **Verification method**
+
+
+      1. Verify approval signatures and version control on all BC/DR documents. 2. Check communication
+      records. 3. Confirm stakeholder acknowledgment is documented.'
+    typical_evidence: • Business continuity and disaster recovery plans, policies and procedures with
+      approval records and signatures • Communication records and distribution list • Stakeholder and
+      external partner acknowledgment
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---6
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 6
+    name: Implement and maintain a comprehensive and systematic Business Impact Analysi…
+    description: 'Implement and maintain a comprehensive and systematic Business Impact Analysis process
+      to identify all critical business activities, dependencies, and impact metrics. The BIA shall determine
+      MTPD, MBCO, RTO, RPO, and resource requirements for each critical service.
+
+
+      **Implementation guide**
+
+
+      Establish systematic BIA methodology / process: Identify all business activities and services, Assess
+      criticality based on operational, financial, regulatory, and reputational impact, Map dependencies
+      (internal/external), Determine impact over time (hourly, daily, weekly), Calculate MTPD (Maximum
+      Tolerable Period of Disruption), Define MBCO (Minimum Business Continuity Objective), Establish
+      RTO (Recovery Time Objective) and RPO (Recovery Point Objective), Document resource requirements
+      (personnel, technology, facilities, data).
+
+
+      **Verification method**
+
+
+      1. Review BIA methodology and verify completeness of analysis ensuring it covers all aspects required
+      by the control. 2. Check metric accuracy and confirm dependency mapping covers both internal and
+      external dependencies.'
+    typical_evidence: • BIA methodology / process document • Completed BIA reports • Critical busines
+      activities inventory with dependency mapping • Impact metrics (MTPD, MBCO, RTO, RPO) per critical
+      service • Resource requirements
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---7
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 7
+    name: Conduct and maintain a rigorous and systematic risk assessment process to ide…
+    description: 'Conduct and maintain a rigorous and systematic risk assessment process to identify and
+      evaluate all threats and risks that could cause disruption to prioritized business activities, their
+      required resources, and supporting infrastructure.
+
+
+      **Implementation guide**
+
+
+      define a formal BCM / IT Resilience risk assessment methodology (aligned with ISO 22301/ISO 31000)
+      that systematically identifies, analyzes, and records threats to prioritized business activities,
+      their resources, and infrastructure, keep the assessment updated on a defined cycle or after major
+      changes, and make sure it feeds directly into risk treatment and continuity strategies.
+
+
+      **Verification method**
+
+
+      Confirm a structured methodology exists and that recent risk assessments are complete, current,
+      linked to prioritized activities and resources, and result in documented mitigation actions'
+    typical_evidence: • Documented BCM/IT resilience risk assessment methodology • Completed, current
+      risk assessment reports or registers linked to prioritized business activities and required resources
+      • Risk treatment or mitigation plans derived from the assessments, showing owners and actions for
+      key risks.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---8
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 8
+    name: Identify, document, and maintain an approved registry of all essential servic…
+    description: 'Identify, document, and maintain an approved registry of all essential services and
+      products provided by the organization. The registry shall include identification of internal and
+      external dependencies including material, spatial, technical, administrative, and personnel dependencies.
+
+
+      **Implementation guide**
+
+
+      1. Create comprehensive essential services registry: List all services/products with descriptions,
+      Identify internal dependencies (systems, data, personnel, processes), Document external dependencies
+      (vendors, utilities, communications), Map material dependencies (supplies, equipment), Identify
+      spatial dependencies (facilities, locations), Document technical dependencies (applications, infrastructure),
+      Record administrative dependencies (licenses, contracts), List personnel dependencies (key roles,
+      skills). 2. Obtain formal approval for registry.
+
+
+      **Verification method**
+
+
+      1. Review registry for completeness across all dependency categories. 2. Verify formal approval
+      is documented and registry is maintained as a current record.'
+    typical_evidence: • Essential services registry with dependency documentation • Internal dependency
+      mapping • External dependency inventory • Registry approval records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---9
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 9
+    name: Identify and record the key recovery time limits (MTPD, RTO, MBCO, and RPO) f…
+    description: 'Identify and record the key recovery time limits (MTPD, RTO, MBCO, and RPO) for each
+      critical business service. These timeframes should be based on the results of the Business Impact
+      Analysis (BIA) and must align with the organization’s mission and strategic objectives.
+
+
+      **Implementation guide**
+
+
+      1. Document recovery time limits for each critical service: MTPD: Maximum time before unacceptable
+      consequences, RTO: Target time for service restoration, MBCO: Minimum acceptable service level during
+      recovery, RPO: Maximum acceptable data loss. 2. Ensure targets are: Based on BIA impact analysis,
+      Aligned with organizational mission, Consistent with strategic objectives, Technically achievable,
+      Approved by business owners and senior management.
+
+
+      **Verification method**
+
+
+      Check that each critical service has documented, BIA‑justified MTPD, RTO, MBCO, and RPO, and confirm
+      these values are approved and consistent with stated mission and strategy'
+    typical_evidence: • Key recovery time limits documentation per critical service • BIA reports showing
+      impact analysis for each critical business service and the resulting proposed time limits. • Approved
+      register or catalog listing MTPD, RTO, MBCO, and RPO for each critical service, with business owner
+      and approval dates.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---12
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 12
+    name: Identify, evaluate, and select appropriate ICT continuity and data continuity…
+    description: 'Identify, evaluate, and select appropriate ICT continuity and data continuity strategies
+      and solutions (high-availability architectures, backup systems, replication, alternate processing
+      sites, manual workarounds) designed to meet approved RTO, RPO, and availability requirements.
+
+
+      **Implementation guide**
+
+
+      Derive and approve RTO, RPO, and availability requirements for critical business processes and their
+      supporting applications through BIA/continuity analysis with business owners. For each critical
+      system, design ICT continuity solutions (e.g., active‑active or active‑passive clusters, synchronous/asynchronous
+      replication, backup frequency, alternate processing site, documented manual workarounds) that technically
+      achieve the required RTO and RPO, and document the mapping in DR/architecture artifacts. Integrate
+      these strategies into operational procedures (backup schedules, failover playbooks, manual fallback
+      steps) and ensure they are regularly tested, monitored, and updated when RTO/RPO or system criticality
+      changes
+
+
+      **Verification method**
+
+
+      1. Check that for sampled critical services there are clearly documented, approved continuity strategies
+      and architectures that correspond to their RTO/RPO/availability targets, with evidence of options
+      analysis 2. Examine recent DR tests or real incident recoveries to check whether actual recovery
+      times and data loss remained within the approved RTO/RPO'
+    typical_evidence: •Approved ICT continuity/DR architecture or design documents for critical systems
+      showing selected strategies (HA, backup, replication, alternate sites, manual workarounds) mapped
+      to each system’s RTO, RPO, and availability targets. • Solution assessment criteria / Documented
+      decision or options analysis • Recent DR/continuity test reports or failover exercise results demonstrating
+      actual recovery times and data loss for key systems, compared against the approved RTO/RPO.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---13
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 13
+    name: Ensure that critical ICT suppliers, external service providers, and third-par…
+    description: 'Ensure that critical ICT suppliers, external service providers, and third-party service
+      organizations can support required ICT readiness capabilities and recovery solutions, and can reliably
+      meet predetermined recovery time frames, service levels, and backup/recovery schedules.
+
+
+      **Implementation guide**
+
+
+      Embed ICT readiness and recovery requirements (RTO/RPO, availability, backup schedules, and DR capabilities)
+      into third‑party risk management, supplier selection, and contracting, then obtain and review ongoing
+      assurance from critical providers to confirm their continuity arrangements and testing support the
+      required recovery objectives.
+
+
+      **Verification method**
+
+
+      Check that critical ICT suppliers have contracts and due‑diligence files reflecting explicit recovery
+      and continuity expectations and that recent assurance evidence supports their ability to meet the
+      defined recovery requirements.'
+    typical_evidence: • Third‑party risk and due‑diligence assessments for critical ICT suppliers covering
+      BCM/DR capabilities, RTO/RPO, backup/recovery, and availability • Contracts/SLAs with critical ICT
+      suppliers explicitly defining required recovery time frames, service levels, and backup/recovery
+      schedules. • Third-party recovery testing evidence
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---14
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 14
+    name: All proposed changes to critical infrastructure, hardware, software, systems,…
+    description: 'All proposed changes to critical infrastructure, hardware, software, systems, and applications
+      that support identified critical services shall undergo a formal impact and risk assessment to ensure
+      that approved business requirements for availability, recovery, and continuity are preserved. This
+      assessment shall also be performed whenever significant changes occur to these components.
+
+
+      **Implementation guide**
+
+
+      1. Integrate BC/DR impact assessment into change management: Identify changes affecting critical
+      systems, Assess impact on RTO, RPO, and availability, Evaluate risk to recovery capabilities, Require
+      BC/DR approval for significant changes, Update BC/DR documentation post-change, Validate recovery
+      capability after implementation. 2. clearly define that no changes to critical systems shall proceed
+      without documented BC/DR impact assessment and in case the change is urgent / critical it must undergo
+      emergency change process.
+
+
+      **Verification method**
+
+
+      1. Review change assessment procedure for BC/DR integration. 2. Verify assessments are completed
+      for all significant changes and post-change validation is documented.'
+    typical_evidence: • Change impact assessment procedure • BC/DR impact assessment template • Completed
+      assessment records • Change approval documentation • Post-change validation
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---15
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 15
+    name: Ensure that ICT recovery systems, backup data centers, alternate processing f…
+    description: 'Ensure that ICT recovery systems, backup data centers, alternate processing facilities,
+      and critical backup data are physically and logically separated from operational sites and production
+      environments to prevent common-cause failures.
+
+
+      **Implementation guide**
+
+
+      1. Implement separation for recovery infrastructure (ICT Recovery Systems): Geographic distance:
+      DR site sufficiently distant to avoid common regional disasters , Network isolation: Separate network
+      paths, diverse carriers, independent routing, Physical separation: Separate facilities, different
+      utility providers, independent access, Logical separation: Isolated network segments, separate management
+      domains. 2. Document separation measures and validate against common-cause failure scenarios.
+
+
+      **Verification method**
+
+
+      1. Verify geographic separation distances and test network isolation. 2. Review common-cause failure
+      analysis for completeness. 3. Confirm separation is maintained across all recovery infrastructure.'
+    typical_evidence: • DR site location documentation • Geographic separation evidence • Network isolation
+      configuration • Physical security separation • Common-cause failure analysis
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---16
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 16
+    name: Establish, develop, document, and maintain comprehensive Business Continuity…
+    description: 'Establish, develop, document, and maintain comprehensive Business Continuity Plans (BCP)
+      and Disaster Recovery Plans (DRP) that are formally approved by authorized management and documented
+      in sufficient detail for competent personnel to execute during disruptions.
+
+
+      **Implementation guide**
+
+
+      1. Develop comprehensive BCP and DRP with sufficient detail: Clear scope and objectives, Activation
+      criteria and authority, Team roles and responsibilities, Step-by-step procedures, Communication
+      protocols, Resource requirements, Recovery priorities, Escalation procedures. Ensure documentation
+      level enables execution by trained personnel without plan authors present. 2. Obtain formal management
+      approval with signatures.
+
+
+      **Verification method**
+
+
+      1. Review plan completeness and verify approval signatures are current. 2. Assess whether documentation
+      is sufficiently detailed for independent execution by trained personnel.'
+    typical_evidence: • Business Continuity Plans • Disaster Recovery Plans • Management approval records
+      • Version control documentation • Distribution records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---20
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 20
+    name: Prepare, document, and approve an annual plan for implementing exercises, sim…
+    description: 'Prepare, document, and approve an annual plan for implementing exercises, simulations,
+      and tests designed to validate the effectiveness of business continuity and disaster recovery plans,
+      policies, and procedures.
+
+
+      **Implementation guide**
+
+
+      Define and maintain an annual BCM/DR testing programme that lists all planned exercises, simulations,
+      and technical tests with scope, scenarios, and objectives, obtain senior management approval, and
+      use the plan to drive execution and documentation of activities that validate the effectiveness
+      of key plans, policies, and procedures
+
+
+      **Verification method**
+
+
+      Confirm an approved annual exercise plan exists, aligns with BCM/DR scope, and that completed exercises
+      match the plan and produce documented results'
+    typical_evidence: • Approved annual BCM/DR exercise and testing plan/schedule covering exercises,
+      simulations, and tests in scope • Documented exercise/test objectives and scenarios mapped to specific
+      BC/DR plans, policies, and procedures • Records showing execution of tests as per the plan (e.g.,
+      attendance, logs, post‑exercise reports). • Evidence of senior management approval of the annual
+      exercise plan.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---21
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 21
+    name: Implement exercises and simulations following documented and approved methodo…
+    description: 'Implement exercises and simulations following documented and approved methodology that
+      progresses systematically from discussion-based exercises through tabletop exercises to fully simulated
+      activation and live operations testing.
+
+
+      **Implementation guide**
+
+
+      Define a structured, approved exercise methodology that starts with lower‑impact discussion‑based
+      and tabletop sessions and gradually advances to semi‑functional and full activation/live operations
+      tests, then implement an exercise programme that follows this progression and documents each activity.
+
+
+      **Verification method**
+
+
+      Confirm the methodology exists and is approved, and verify that recent exercises cover multiple
+      levels (discussion, tabletop, simulated/live) in line with the plan'
+    typical_evidence: • Documented and approved BCM/DR exercise and testing methodology • Exercise execution
+      plans and records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---22
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 22
+    name: Document exercise results, observations, areas of effectiveness, gaps, lesson…
+    description: 'Document exercise results, observations, areas of effectiveness, gaps, lessons learned,
+      improvement opportunities, and recommendations. Documentation shall be shared with relevant stakeholders,
+      steering committee, and recovery team members.
+
+
+      **Implementation guide**
+
+
+      1. Document exercise outcomes comprehensively: Detailed observations during exercise, Areas of effectiveness
+      (what worked well), Identified gaps (what didn’t work), Lessons learned (key insights), Improvement
+      opportunities (specific enhancements), Recommendations (prioritized actions). 2. Share documentation
+      with: BC Steering Committee, Recovery team members, Relevant department heads, Exercise participants.
+
+
+      **Verification method**
+
+
+      1. Review documentation completeness against all required elements. 2. Verify distribution records
+      confirm receipt by all required stakeholders including the steering committee.'
+    typical_evidence: • Exercise observation records with effectiveness assessment • Gap identification
+      • Lessons learned documentation • Improvement recommendations • Distribution records confirming
+      stakeholder receipt
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---23
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 23
+    name: Create comprehensive testing and exercise reports documenting executive summa…
+    description: 'Create comprehensive testing and exercise reports documenting executive summary, exercise
+      objectives, execution results, assessment findings, identified gaps, lessons learned, and recommendations.
+
+
+      **Implementation guide**
+
+
+      Produce formal exercise reports containing: Executive summary (key findings, critical recommendations),
+      Exercise objectives and scope, Scenario description, Execution timeline and activities, Results
+      against objectives, Assessment findings (strengths, weaknesses), Identified gaps with severity,
+      Lessons learned, Prioritized recommendations, Appendices (detailed observations, participant feedback).
+
+
+      **Verification method**
+
+
+      Verify completed reports are comprehensive, findings are severity-rated, and recommendations are
+      actionable and prioritized.'
+    typical_evidence: • Completed exercise reports with executive summary • Objective achievement assessment
+      • Finding and gaps documentation with severity ratings • sample lessons learned and recommendations
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---24
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 24
+    name: Communicate testing and exercise outcomes, key findings, and recommendations…
+    description: 'Communicate testing and exercise outcomes, key findings, and recommendations to the
+      BCM steering committee, recovery team leaders, department heads, and other relevant stakeholders
+      in a timely manner.
+
+
+      **Implementation guide**
+
+
+      Adopt a consistent, approved reporting template for all BCM/DR exercises and tests and embed it
+      in process as a requirement to send outcomes, key findings, and recommendations within a defined
+      timeframe to the BCM steering committee, recovery leaders, department heads, and other stakeholders
+      via formal channels.
+
+
+      **Verification method**
+
+
+      check that recent exercise reports exist, follow the standard template, and have evidence of timely
+      circulation to the required stakeholders'
+    typical_evidence: • sample testing reports communication records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---25
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 25
+    name: Systematically use lessons learned from exercises, real incidents, and post-r…
+    description: 'Systematically use lessons learned from exercises, real incidents, and post-recovery
+      evaluations to develop, enhance, and update business continuity plans, procedures, and technical
+      recovery solutions.
+
+
+      **Implementation guide**
+
+
+      Mandate structured debriefs after exercises, incidents, and major recoveries using a standard lessons‑learned
+      template, record agreed corrective and improvement actions, and feed them into formal change management
+      so BC/DR documents and technical solutions are updated and re‑approved as part of continual improvement.
+
+
+      **Verification method**
+
+
+      Check that recent events have documented lessons‑learned reviews and that resulting actions are
+      traceably implemented through updates to plans, procedures, and solutions.'
+    typical_evidence: • Lessons learned process • Sample lessons‑learned / after‑action reports from exercises
+      and real incidents showing identified issues, recommendations, and agreed changes. • Evidence that
+      BC/DR plans, procedures, and technical recovery designs were updated based on lessons learned (version
+      history, change logs, or design updates)
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---26
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 26
+    name: Establish, monitor, and track performance indicators related to exercise plan…
+    description: 'Establish, monitor, and track performance indicators related to exercise plan implementation
+      and effectiveness. Periodic performance reports shall be produced and presented to senior management
+      and steering committee.
+
+
+      **Implementation guide**
+
+
+      1. Define and track exercise performance indicators: Plan implementation metrics (exercises completed
+      vs. planned), Effectiveness metrics (objectives achieved, gaps closed), Participation metrics (attendance,
+      engagement), Improvement metrics (recommendations implemented), Trend analysis (year-over-year improvement).
+      2. Produce regular performance reports for steering committee and for senior management.
+
+
+      **Verification method**
+
+
+      Review performance indicators for completeness and make sure performance monitoring reports are
+      provided to related personnel.'
+    typical_evidence: • Exercise performance indicator • Periodic performance reports
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---27
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 27
+    name: Implement and maintain a program of regular exercising and testing to validat…
+    description: 'Implement and maintain a program of regular exercising and testing to validate the effectiveness
+      of ICT readiness capabilities, recovery solutions, backup systems, and restoration procedures.
+
+
+      **Implementation guide**
+
+
+      1. Define and maintain a recurring ICT continuity testing programme that includes scheduled failover,
+      backup/restore, and recovery‑procedure tests for critical systems, execute these tests at planned
+      intervals or after major changes, and document outcomes to confirm capabilities meet defined RTO/RPO
+      and readiness objectives. 2. Document all test results and track remediation of issues and lessons
+      learned.
+
+
+      **Verification method**
+
+
+      Verify that a regular ICT testing schedule exists and that recent tests cover readiness, recovery
+      solutions, and backup/restoration with documented evidence and follow‑up'
+    typical_evidence: • ICT testing program / schedule • Test plans and records for ICT failover, backup/restore,
+      and recovery procedure tests, including results and issues found • Evidence of backup verification
+      and restoration testing
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---28
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 28
+    name: Ensure that comprehensive tests and assessments are conducted at least annual…
+    description: 'Ensure that comprehensive tests and assessments are conducted at least annually on all
+      ICT systems, applications, infrastructure, and services that support critical or important business
+      functions.
+
+
+      **Implementation guide**
+
+
+      Define critical and important ICT components from the BIA, then maintain an annual ICT testing programme
+      and coverage matrix to ensure every such system, application, infrastructure element, and service
+      undergoes at least one comprehensive test or assessment per year, with results documented and tracked.
+
+
+      **Verification method**
+
+
+      Compare the critical/important ICT inventory to the annual testing coverage matrix and reports to
+      confirm all items were tested at least annually ensuring that an approved policy clearly mandates
+      the annual testing of identified ICT components.'
+    typical_evidence: • Policy/standard or testing programme requiring at least annual comprehensive tests/assessments
+      for ICT systems. • Annual test schedule and coverage matrix showing all critical/important ICT components
+      with planned and completed tests in the year • Test reports or assessment results demonstrating
+      that each in‑scope ICT component was tested at least once during the year.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---31
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 31
+    name: Establish and maintain documented processes, procedures, and criteria to syst…
+    description: 'Establish and maintain documented processes, procedures, and criteria to systematically
+      restore and return business activities, systems, data, and services from temporary or alternate
+      recovery measures to normal operational status following disruption resolution.
+
+
+      **Implementation guide**
+
+
+      Create and maintain reconstitution/return‑to‑normal procedures that specify pre‑conditions, decision
+      authorities, step‑by‑step restoration and failback activities, data integrity checks, and communication
+      steps for moving from temporary measures back to normal operations, and ensure they are integrated
+      into BC/DR plans and tested during exercises.
+
+
+      **Verification method**
+
+
+      Verify that documented reconstitution procedures exist, include clear criteria and steps for restoring
+      and returning operations, and have been exercised or used in at least one test or incident'
+    typical_evidence: • Documented “return to normal / reconstitution” procedures covering restoration
+      from alternate sites and temporary workarounds back to primary business operations, systems, data,
+      and services. • Defined criteria and decision points for initiating restoration/failback (e.g.,
+      stability checks, data integrity verification, business approval). • Sample records from at least
+      one disruption or test
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---32
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 32
+    name: Prepare, document, review, and periodically update comprehensive disaster rec…
+    description: 'Prepare, document, review, and periodically update comprehensive disaster recovery plans
+      and procedures to enable recovery from crises, disasters, and major disruptions.
+
+
+      **Implementation guide**
+
+
+      Develop a comprehensive DRP and procedure covering: Disaster declaration criteria and authority,
+      Recovery team activation procedures, System recovery priorities and sequences, Data restoration
+      procedures, Application recovery procedures, Infrastructure recovery procedures, Communication and
+      coordination, Return to normal operations. Review and update at least annually and after significant
+      changes or incidents.
+
+
+      **Verification method**
+
+
+      Verify that DR plans exist for relevant systems, are current, approved, and show evidence of periodic
+      review and updates progression in complexity and check outcomes are documented per exercise, ensure
+      all documents are reviewed, updated and approved.'
+    typical_evidence: • Documented disaster recovery plans and procedures covering crises, disasters,
+      and major disruptions for all in‑scope systems and services. • Exercise execution records • Review
+      and approval records
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---34
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 34
+    name: Establish, document, and implement procedures and assessment models for syste…
+    description: 'Establish, document, and implement procedures and assessment models for systematically
+      evaluating and documenting the necessary needs of affected employees, customers, business partners,
+      and affected populations.
+
+
+      **Implementation guide**
+
+
+      1. Develop needs assessment procedures: Employee needs: Safety, communication, work arrangements,
+      support services, Customer needs: Service continuity, communication, alternative access, Business
+      partner needs: Coordination, information sharing, joint recovery, Affected populations: Community
+      impact, support requirements. 2. Create assessment templates and deploy during/after incidents to
+      guide response and recovery support.
+
+
+      **Verification method**
+
+
+      1. Review assessment procedures and sample assessment reports to ensure completeness. 2. Verify
+      stakeholder coverage spans all four categories and templates are deployed consistently during incident
+      response.'
+    typical_evidence: • Needs assessment procedures • Assessment models/templates • Stakeholder impact
+      evaluation • Sample assessment reports
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---35
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 35
+    name: Establish, document, and maintain procedures and models to systematically enu…
+    description: 'Establish, document, and maintain procedures and models to systematically enumerate
+      damages, estimate all categories of losses, and assess impact on business operations, assets, data,
+      and service delivery.
+
+
+      **Implementation guide**
+
+
+      develop and implement a formal damage and loss assessment procedures using the defined models so
+      that, after significant disruptions, teams systematically list damaged items, estimate losses by
+      category, and document operational, asset, data, and service‑delivery impacts, ensuring results
+      are stored centrally and used for recovery, funding, and reporting decisions.
+
+
+      **Verification method**
+
+
+      Check that procedures/models exist and that recent incidents or exercises include fully completed
+      damage/loss assessments aligned to them with quantified, categorized impacts'
+    typical_evidence: • Damage assessment procedures / templates • Defined damage and loss categories
+      and impact scales (e.g., asset damage, data loss, downtime, financial loss, service degradation)
+      with clear estimation criteria. •Completed damage/loss assessment records from incidents or exercises
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---36
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 36
+    name: Review and periodically update disaster recovery procedures, processes, and p…
+    description: 'Review and periodically update disaster recovery procedures, processes, and plans to
+      reflect changes in business operations, technical infrastructure, regulatory requirements, and lessons
+      learned.
+
+
+      **Implementation guide**
+
+
+      1. Establish DR plan maintenance process: Scheduled reviews (annual minimum), Triggered reviews
+      for: Business operation changes, Technical infrastructure updates, Regulatory requirement changes,
+      Post-incident lessons learned, Exercise findings. 2. Document all changes with version control,
+      obtain approval for significant updates, communicate changes to stakeholders.
+
+
+      **Verification method**
+
+
+      1. Verify review schedule adherence and check update completion records. 2. Confirm lessons learned
+      are systematically integrated into plan updates and version control is maintained.'
+    typical_evidence: • DR review schedule and update completion records • Change tracking log • Lessons
+      learned integration • Regulatory alignment verification
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---37
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 37
+    name: Define and document the future required state for resources, capabilities, an…
+    description: 'Define and document the future required state for resources, capabilities, and capacities
+      needed to achieve business continuity and disaster recovery objectives.
+
+
+      **Implementation guide**
+
+
+      Use BIA, risk, and maturity‑assessment results to define a clear future‑state model for BCM/DR resources,
+      capabilities, and capacities, document it in a roadmap, and maintain a gap‑driven investment and
+      implementation plan that is approved and periodically refreshed.
+
+
+      **Verification method**
+
+
+      Check that a documented future‑state/roadmap exists, that it is based on assessed gaps and defined
+      future state, and that there is an approved, active plan to build the required resources and capabilities.'
+    typical_evidence: • Documented target‑state or roadmap document for BCM/IT resilience describing future
+      required resources, capabilities, and capacities to meet BC/DR objectives. • Mapping or gap‑analysis
+      outputs comparing current vs. required future state for key areas (people, processes, technology,
+      capacity, suppliers). • Approved implementation or investment plan (multi‑year, if needed) that
+      lists initiatives to build the required future capabilities and capacities, with owners and timelines.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---38
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 38
+    name: Conduct and document a comprehensive gap analysis comparing current resource,…
+    description: 'Conduct and document a comprehensive gap analysis comparing current resource, capability,
+      and capacity state with future requirements.
+
+
+      **Implementation guide**
+
+
+      Apply a formal gap‑analysis process that takes the defined future/target state for BCM/DR resources
+      and capabilities, assesses the current state using a structured model, documents gaps in a central
+      register, and feeds a prioritized remediation roadmap approved by management.
+
+
+      **Verification method**
+
+
+      Verify that a recent, documented gap analysis exists comparing current vs future BCM/DR resources/capabilities
+      and that it drives a live remediation plan'
+    typical_evidence: • Documented gap‑analysis procedure or model for comparing current BCM/DR resources,
+      capabilities, and capacities with defined future requirements. • Completed gap‑analysis report or
+      matrix showing, for key resource/capability areas, side‑by‑side current vs future state and quantified/qualified
+      gaps. • Resulting improvement or remediation plan
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---39
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 39
+    name: Identify and prioritize additional resources, capabilities, and capacities ne…
+    description: 'Identify and prioritize additional resources, capabilities, and capacities needed to
+      close identified gaps and achieve business continuity and disaster recovery objectives.
+
+
+      **Implementation guide**
+
+
+      Use the latest gap‑analysis outputs to maintain a structured, risk‑based backlog of additional BCM/DR
+      resources and capabilities, apply clear prioritization criteria, and translate the top‑priority
+      items into an approved remediation roadmap with accountable owners and timelines.
+
+
+      **Verification method**
+
+
+      Confirm that gaps are captured in a prioritized list linked to a live remediation plan and that
+      high‑risk/high‑impact needs are clearly top‑ranked and under active implementation'
+    typical_evidence: • Prioritized register or backlog of additional BCM/DR resources, capabilities,
+      and capacities required to close documented gaps and meet BC/DR objectives. • prioritization criteria/method
+      (e.g., risk level, impact on RTO/RPO, criticality of services, regulatory drivers, cost/benefit)
+      • Approved remediation or investment plan mapping prioritized needs to specific initiatives, owners,
+      target dates, and (where applicable) budgets.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---40
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 40
+    name: Develop and document a comprehensive plan to close identified resource gaps a…
+    description: 'Develop and document a comprehensive plan to close identified resource gaps and provide
+      necessary resources, capabilities, and capacities.
+
+
+      **Implementation guide**
+
+
+      Transform the gap‑analysis register into a structured BC/DR remediation plan that, for each gap,
+      defines a concrete initiative with scope, target dates, accountable owners, and resource/budget
+      requirements, differentiates quick wins from longer‑term investments, and embeds the plan into existing
+      governance so status is tracked and updated after tests, incidents, and business changes.
+
+
+      **Verification method**
+
+
+      Verify there is a current, approved, and resourced BC/DR remediation plan explicitly linked to identified
+      gaps, with clear actions, owners, and timelines under active governance'
+    typical_evidence: • Documented BC/DR remediation plan (or roadmap) that clearly lists each identified
+      resource/capability/capacity gap and the corresponding actions to close it. • For each action, defined
+      scope, milestones, timelines, owners, dependencies, and required budget/approvals
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---42
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 42
+    name: Define, document, and maintain procedures and processes for systematically ma…
+    description: 'Define, document, and maintain procedures and processes for systematically managing
+      business continuity across the organization in delivering and maintaining essential services.
+
+
+      **Implementation guide**
+
+
+      Establish an organization‑wide BCM process/ policy, then develop a set of procedures that cover
+      the full BCM lifecycle (BIA, risk, strategies, planning, response, recovery, exercising, review)
+      and require every essential service owner to maintain aligned continuity plans and operating procedures,
+      with defined ownership, review cycles, and integration into day‑to‑day governance.
+
+
+      **Verification method**
+
+
+      Confirm that coherent, up‑to‑date BCM procedures and essential service plans exist, are consistently
+      applied across the organization, and are actively maintained and covering critical and essential
+      services.'
+    typical_evidence: • BCM Policy / framework and operational procedures/processes (clearly showing the
+      coverage of critical essential services) • Service‑ or function‑level business continuity plans
+      and run‑books for identified essential services with response and recovery procedures. • Evidence
+      of ongoing maintenance of BCM procedures and plans
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---43
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 43
+    name: Define, document, and establish performance measurement indicators for busine…
+    description: 'Define, document, and establish performance measurement indicators for business continuity
+      management that provide objective evidence of program effectiveness, compliance with procedures,
+      resource utilization, and progress.
+
+
+      **Implementation guide**
+
+
+      Design a concise set of BC-specific KPIs aligned to ISO 22301 performance‑evaluation requirements,
+      covering effectiveness (e.g., test success rates, RTO/RPO achievement), procedural compliance (BIA/plan/exercise
+      completion and currency), and program progress or maturity, then formalize them in a metric framework
+      with clear owners, data sources, targets, and review cycles, and embed them into regular BC governance
+      reporting so results consistently trigger corrective and improvement actions
+
+
+      **Verification method**
+
+
+      Confirm that defined BC performance indicators exist, are regularly measured and reported, and are
+      used to evidence effectiveness, compliance, and progress'
+    typical_evidence: • Documented BC/DR KPI and metrics • BC performance reports or dashboards showing
+      actual KPI values over time with baselines and targets • Baseline and targets • Reporting dashboard
+      • Evidence that KPI results drive action (e.g., minutes showing decisions, corrective actions, or
+      improvement initiatives triggered by underperforming metrics)
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---44
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 44
+    name: Test, validate, and periodically evaluate solutions and controls established…
+    description: 'Test, validate, and periodically evaluate solutions and controls established to manage
+      and mitigate service disruption risks.
+
+
+      **Implementation guide**
+
+
+      Implement a structured BC/DR exercise program that uses risk‑based scenarios to validate continuity
+      strategies, technical DR solutions, and process controls against defined objectives (e.g., RTO/RPO),
+      documents results and lessons learned, and feeds a formal improvement cycle that updates plans,
+      configurations, and procedures after each exercise, incident, or major change.
+
+
+      **Verification method**
+
+
+      Confirm there is a risk‑based, recurring program of tests and exercises that demonstrably validates
+      BC/DR solutions and controls and leads to documented improvements'
+    typical_evidence: • Documented BC/DR exercise and testing program that explains how risk‑mitigation
+      solutions and controls (strategies, technologies, workarounds) will be tested, including objectives,
+      scope, frequency, roles, and scenarios. • Records of executed tests and exercises • Post‑exercise/test
+      evaluation and lessons‑learned reports •Evidence that evaluations are performed at defined intervals
+      and after incidents or significant changes, and that BC documentation and solutions are updated
+      accordingly.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---46
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 46
+    name: Measure and evaluate the effectiveness of the IT disaster recovery plan and r…
+    description: 'Measure and evaluate the effectiveness of the IT disaster recovery plan and recovery
+      solutions on a periodic basis (at minimum yearly) through testing, exercise evaluation, post-incident
+      assessments, and performance analysis.
+
+
+      **Implementation guide**
+
+
+      Define a formal IT DRP effectiveness‑measurement process that mandates at least annual testing of
+      critical recovery scenarios, captures detailed results against target RTO/RPO and other success
+      criteria, and performs structured lessons‑learned reviews after tests and real incidents, ensuring
+      that findings are translated into updates of the DR plan, configurations, and procedures and are
+      regularly summarized for management.
+
+
+      **Verification method**
+
+
+      Check that IT DRP tests and incident reviews happen at least yearly, results are evaluated against
+      clear objectives, and improvements are implemented'
+    typical_evidence: • Documented process describing how IT DRP effectiveness is measured (scope, methods,
+      and minimum annual frequency). • Records of IT DR/BCDR tests and exercises with documented results
+      versus recovery objectives (e.g., RTO/RPO). • Post‑exercise and post‑incident review reports • Evidence
+      that IT DR performance and effectiveness metrics are periodically reported to managemen
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---49
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 49
+    name: ICT readiness, business continuity, and disaster recovery processes shall be…
+    description: 'ICT readiness, business continuity, and disaster recovery processes shall be clearly
+      documented in sufficient detail and with sufficient specificity to enable competent and trained
+      staff to execute procedures.
+
+
+      **Implementation guide**
+
+
+      Define a standard template and quality criteria for ICT readiness, BC, and DR documentation, then
+      ensure each critical process has an owned, version‑controlled run‑book with clear triggers, decision
+      points, roles, and step‑by‑step instructions, stored in an accessible repository and incorporated
+      into training and exercises so staff can reliably execute them under stress.
+
+
+      **Verification method**
+
+
+      Check that up‑to‑date, detailed ICT/BC/DR procedures exist for critical processes, are accessible
+      and owned, and are accessable & known to trained staff'
+    typical_evidence: • ICT readiness, BC, and DR process documents/run‑books with step‑by‑step procedures,
+      roles, and prerequisites. • Version‑controlled repository or inventory of BC/DR documents. • Training
+      or awareness records confirming staff are briefed>
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---50
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 50
+    name: Regularly assess and verify that critical suppliers, service providers, and t…
+    description: 'Regularly assess and verify that critical suppliers, service providers, and third-party
+      organizations can reliably deliver required services, meet service level agreements, and support
+      predetermined recovery time frames.
+
+
+      **Implementation guide**
+
+
+      Implement a structured, risk‑based third‑party continuity assessment process for all critical suppliers
+      that checks their BC/DR capabilities, test practices, and recovery timeframes against the organization''s
+      RTO/RPO and SLA requirements, embeds continuity clauses into contracts, and drives remediation,
+      alternatives, or risk acceptance where capability gaps are identified.
+
+
+      **Verification method**
+
+
+      Confirm that critical suppliers are periodically assessed for BC/DR capability, that SLAs match
+      required recovery timeframes, and that identified gaps are actively managed'
+    typical_evidence: • Defined methodology or procedure for assessing BC/DR capability of critical suppliers
+      and third parties (including RTO/RPO and SLA alignment). • Completed assessments or due‑diligence
+      questionnaires for critical suppliers showing their continuity arrangements, test practices, and
+      stated recovery timeframes. • Sample SLAs and contracts covering continuity requirements (e.g.,
+      minimum service levels during disruption, RTO/RPO, reporting obligations).
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---52
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 52
+    name: Establish mechanisms and implement continuous monitoring to promptly detect a…
+    description: 'Establish mechanisms and implement continuous monitoring to promptly detect anomalous
+      activities, ICT network issues, unusual system behavior, potential security incidents, and operational
+      disruptions.
+
+
+      **Implementation guide**
+
+
+      Deploy a layered continuous monitoring capability (network, host, application, and log monitoring
+      via SIEM/NDR/IDS and infra tools) over critical ICT assets, define normal baselines and anomaly
+      criteria, configure alerting and triage workflows, and routinely tune rules and use‑cases so unusual
+      behavior, performance degradation, and security events are detected early and handed off to incident
+      response in a timely, structured way.
+
+
+      **Verification method**
+
+
+      Check that critical ICT assets are under active, 24x7‑equivalent monitoring with meaningful alerts,
+      that anomalies trigger tickets and investigations, and that monitoring rules are periodically tuned'
+    typical_evidence: • ICT monitoring and anomalous‑activity detection strategy or procedures (scope,
+      tools, thresholds, responsibilities). • Configuration/architecture evidence of monitoring tools
+      (e.g., SIEM, NDR, IDS, log management, infra/app monitoring) covering critical ICT assets and networks.
+      • Sample alerts, event logs, and incident tickets showing detection of anomalous/abnormal activities
+      (if any). • Evidence of regular review of monitoring effectiveness (e.g., tuning, threshold reviews,
+      use‑case coverage, reduction of false positives).
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---53
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 53
+    name: Establish and maintain crisis communication plans and procedures for managing…
+    description: 'Establish and maintain crisis communication plans and procedures for managing communications,
+      notifications, and responsible disclosure of major incidents, security breaches, and ICT-related
+      events.
+
+
+      **Implementation guide**
+
+
+      Create a formal crisis‑communication plan integrated with incident response and BC/DR that defines
+      triggers, approval workflows, stakeholder mapping, channels, and responsible disclosure requirements,
+      equips the team with templates and contact lists, and ensures the plan is exercised and updated
+      based on real incidents and regulatory expectations (for example DORA‑style responsible disclosure
+      for major ICT incidents).
+
+
+      **Verification method**
+
+
+      Check that a current crisis‑communication and disclosure plan exists, is aligned with incident/BC
+      processes, has been used or tested, and clearly supports timely, responsible external and internal
+      communications'
+    typical_evidence: • Approved crisis communication and incident disclosure plan covering ICT‑related
+      incidents, data breaches, and major operational disruptions. • Defined roles, responsibilities,
+      and decision‑making/escalation workflow for internal and external communications during crises.
+      • Notification and message templates for internal employees, external vendors, regulators and media.
+      • Records of crisis‑communication tests or real‑incident communications, including post‑incident
+      communication reviews.
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---54
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 54
+    name: Report major ICT-related incidents to competent regulatory authorities (NCA a…
+    description: 'Report major ICT-related incidents to competent regulatory authorities (NCA and Insurance
+      Authority) with initial notification and detailed final reports. Reports shall include incident
+      description, impact assessment, response actions, recovery status, and root cause analysis.
+
+
+      **Implementation guide**
+
+
+      Define a regulatory incident-reporting procedure aligned with NCA/Insurance Authority and DORA‑style
+      expectations that sets clear criteria for “major” ICT incidents, prescribes initial and final (and
+      where required intermediate) report timelines, and standardizes report content (description, impact,
+      response, recovery, root cause), then integrate it with incident response so regulatory reporting
+      is triggered, drafted, reviewed, and submitted as part of the standard incident workflow.
+
+
+      **Verification method**
+
+
+      Check that major ICT incidents are classified against defined criteria, reported to authorities
+      within mandated timeframes using complete templates, and tracked through to final reports'
+    typical_evidence: • Regulatory reporting procedures (covering a classification for major ICT incidents)
+      • Reporting template showing initital notification and detailed final report teamplates and sample
+      reports (if any) • Regulatory contact information
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---55
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 55
+    name: Review the business disruption impact analysis at least annually or whenever…
+    description: 'Review the business disruption impact analysis at least annually or whenever significant
+      changes occur in organizational operational processes, business strategy, service delivery models,
+      technology infrastructure, or external environment.
+
+
+      **Implementation guide**
+
+
+      Define a formal BIA review cycle requiring at least annual reassessment plus mandatory updates when
+      major organizational, process, technology, or external‑environment changes occur, integrate these
+      triggers with change and project governance, and ensure updated BIAs are reviewed and approved by
+      business owners so continuity strategies and recovery priorities always reflect the current operating
+      model
+
+
+      **Verification method**
+
+
+      validate that BIAs have been reviewed or updated within the last year and after significant changes,
+      with documented updates and approvals'
+    typical_evidence: • Documented procedure defining BIA review frequency. • Sample completed BIA reviews/updates
+      in the last 12 months
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---56
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 56
+    name: Rreview and update recovery strategies at least annually or whenever signific…
+    description: 'Rreview and update recovery strategies at least annually or whenever significant changes
+      occur in organizational operational or strategic objectives, business processes, technology infrastructure,
+      or recovery capabilities.
+
+
+      **Implementation guide**
+
+
+      Formalize a yearly recovery‑strategy review cycle that validates alignment with current business
+      objectives, critical processes, architectures, and capabilities, and require additional reviews
+      when major changes or incidents occur, ensuring outcomes are documented, approved, and cascaded
+      into DR designs, plans, and resource requirements.
+
+
+      **Verification method**
+
+
+      Check that recovery strategies have been reviewed or updated within the last year and after significant
+      changes, with clear documentation and approvals'
+    typical_evidence: • Documented procedure defining annual recovery strategy review and triggers • Recovery
+      strategy reviews/updates in the last 12 months • Sample strategy reassessment due to major change
+  - urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:itr---57
+    assessable: true
+    depth: 2
+    parent_urn: urn:intuitem:risk:req_node:ia-sat-ml-it-resilience:root
+    ref_id: ITR - 57
+    name: Create and maintain a schedule for all business continuity tests, exercises,…
+    description: 'Create and maintain a schedule for all business continuity tests, exercises, and simulations
+      including current risks, emerging threats, actual incidents, and scenarios.
+
+
+      **Implementation guide**
+
+
+      Establish an annual BC/DR testing program that defines required exercise types and frequencies by
+      criticality, builds a forward‑looking calendar, and uses a scenario library derived from risk assessments,
+      threat intelligence, and real incidents; update the schedule during the year as risks evolve, and
+      ensure execution status and results are regularly reviewed in governance forums.
+
+
+      **Verification method**
+
+
+      Check that a forward BC/DR test schedule exists, is risk‑ and scenario‑based, and is being executed
+      and updated with proper oversight'
+    typical_evidence: • approved BC/DR test and exercise calendar covering key entities (processes, sites,
+      systems, teams) for at least the next 12 months. • Scenario catalogue • Records of completed tests/exercises
+      against the schedule
