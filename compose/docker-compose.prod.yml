@@ -11,6 +11,7 @@ services:
       - AUTH_HOST=${AUTH_HOST:?set AUTH_HOST in compose/.env}
       - OPS_HOST=${OPS_HOST:?set OPS_HOST in compose/.env}
       - HOOKS_HOST=${HOOKS_HOST:?set HOOKS_HOST in compose/.env}
+      - HTTPS_PORT=${HTTPS_PORT:?set HTTPS_PORT in compose/.env}
       - ACME_EMAIL=${ACME_EMAIL:?set ACME_EMAIL in compose/.env}
     volumes:
       - ../deploy/Caddyfile.prod:/etc/caddy/Caddyfile:ro
@@ -21,7 +22,7 @@ services:
     restart: always
     environment:
       - ALLOWED_HOSTS=backend,localhost,${APP_HOST}
-      - CISO_ASSISTANT_URL=https://${APP_HOST}
+      - CISO_ASSISTANT_URL=https://${APP_HOST}${APP_PORT_SUFFIX:-}
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_customer1
@@ -40,7 +41,7 @@ services:
   frontend:
     environment:
       - PUBLIC_BACKEND_API_URL=http://backend:8000/api
-      - PUBLIC_BACKEND_API_EXPOSED_URL=https://${APP_HOST}/api
+      - PUBLIC_BACKEND_API_EXPOSED_URL=https://${APP_HOST}${APP_PORT_SUFFIX:-}/api
       - PROTOCOL_HEADER=x-forwarded-proto
       - HOST_HEADER=x-forwarded-host
       - ADDRESS_HEADER=x-forwarded-for

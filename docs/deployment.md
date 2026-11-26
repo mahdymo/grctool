@@ -11,6 +11,15 @@ deployment's names:
 | `ops.ia.tareeq.one` | Control plane (restrict to office/VPN IPs) |
 | `hooks.ia.tareeq.one` | Resend webhooks (public, signature-verified) |
 
+This deployment uses `HTTPS_PORT=9443` (443 is occupied on the host), so
+every URL carries the port: the app is `https://ia.tareeq.one:9443`, the
+Keycloak console `https://auth.ia.tareeq.one:9443/admin`, and the Resend
+webhook endpoint `https://hooks.ia.tareeq.one:9443/webhooks/resend`.
+Keep `APP_PORT_SUFFIX=:9443` in `.env` in sync with `HTTPS_PORT` — the
+suffix feeds the app's public URL and CSRF origins. Let's Encrypt still
+needs `HTTP_PORT=80` reachable for certificate issuance; Caddy redirects
+`http://…` to the correct `https://…:9443` automatically.
+
 ## 1. Server requirements
 
 - Ubuntu 24.04 (or similar), 4 vCPU / 8 GB RAM / 80 GB disk minimum

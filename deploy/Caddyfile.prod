@@ -7,7 +7,7 @@
 	email {$ACME_EMAIL}
 }
 
-{$APP_HOST} {
+{$APP_HOST}:{$HTTPS_PORT:443} {
 	header {
 		-Server
 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -19,7 +19,7 @@
 	reverse_proxy /* frontend:3000
 }
 
-{$AUTH_HOST} {
+{$AUTH_HOST}:{$HTTPS_PORT:443} {
 	header {
 		-Server
 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -28,7 +28,7 @@
 	reverse_proxy keycloak:8080
 }
 
-{$OPS_HOST} {
+{$OPS_HOST}:{$HTTPS_PORT:443} {
 	header {
 		-Server
 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -42,7 +42,7 @@
 }
 
 # Resend webhooks (signature-verified by the worker itself, spec §4.4.4)
-{$HOOKS_HOST} {
+{$HOOKS_HOST}:{$HTTPS_PORT:443} {
 	header {
 		-Server
 		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
